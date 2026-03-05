@@ -3,8 +3,7 @@ import 'package:home_space/constants.dart';
 import 'package:home_space/core/routing/on_generate_route.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
 import 'package:home_space/core/utils/colors.dart';
-
-import 'features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:home_space/features/splash/presentation/views/splash_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +29,7 @@ class HomeSpace extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoutes,
-      initialRoute: OnBoardingView.routeName,
+      initialRoute: SplashView.routeName,
     );
   }
 }
