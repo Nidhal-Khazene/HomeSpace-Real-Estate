@@ -18,6 +18,21 @@
 |:------:|
 | <img src="assets/preview/auth_6.png" width="220"/> |
 
+| Screen 1 | Screen 2 | Screen 3 | Screen 4 |
+|:--------:|:--------:|:--------:|:--------:|
+| <img src="assets/preview/1.png" width="220"/> | <img src="assets/preview/2.png" width="220"/> | <img src="assets/preview/3.png" width="220"/> | <img src="assets/preview/4.png" width="220"/> |
+
+| Screen 5 | Screen 6 | Screen 7 | Screen 8 |
+|:--------:|:--------:|:--------:|:--------:|
+| <img src="assets/preview/5.png" width="220"/> | <img src="assets/preview/6.png" width="220"/> | <img src="assets/preview/7.png" width="220"/> | <img src="assets/preview/8.png" width="220"/> |
+
+| Screen 9 | Screen 10 | Screen 11 | Screen 12 |
+|:--------:|:---------:|:---------:|:---------:|
+| <img src="assets/preview/9.png" width="220"/> | <img src="assets/preview/10.png" width="220"/> | <img src="assets/preview/11.png" width="220"/> | <img src="assets/preview/12.png" width="220"/> |
+
+| Screen 13 | Screen 14 | Screen 15 | Screen 16 |
+|:---------:|:---------:|:---------:|:---------:|
+| <img src="assets/preview/13.png" width="220"/> | <img src="assets/preview/14.png" width="220"/> | <img src="assets/preview/15.png" width="220"/> | <img src="assets/preview/16.png" width="220"/> |
 
 ## Figma Design:
 
