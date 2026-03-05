@@ -80,16 +80,18 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
   }
 
   void _goToPreviousPage() {
-    _pageController.previousPage(
-      duration: Duration(milliseconds: kMillisecondsDuration),
-      curve: Curves.easeIn,
+    _pageController.animateToPage(
+      currentPage - 1,
+      duration: const Duration(milliseconds: kMillisecondsDuration),
+      curve: Curves.bounceInOut,
     );
   }
 
   void _goToNextPage() {
-    _pageController.nextPage(
-      duration: Duration(milliseconds: kMillisecondsDuration),
-      curve: Curves.easeIn,
+    _pageController.animateToPage(
+      currentPage + 1,
+      duration: const Duration(milliseconds: kMillisecondsDuration),
+      curve: Curves.bounceInOut,
     );
   }
 }

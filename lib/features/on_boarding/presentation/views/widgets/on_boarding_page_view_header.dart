@@ -19,16 +19,17 @@ class OnBoardingPageViewHeader extends StatelessWidget {
     return Column(
       children: [
         Row(
-          spacing: 121,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             currentPage == 0
-                ? const SizedBox(width: 40, height: 40)
+                ? const SizedBox()
                 : CustomGoBackButton(
                     onTap: () {
                       backPressed();
                     },
                   ),
             Text("${currentPage + 1}/5", style: AppStyles.regular12),
+            currentPage == 0 ? const SizedBox() : const SizedBox(width: 40),
           ],
         ),
         const SizedBox(height: 24),

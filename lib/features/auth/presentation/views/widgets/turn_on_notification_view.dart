@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:home_space/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
+import 'package:home_space/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 
 class TurnOnNotification extends StatelessWidget {
   const TurnOnNotification({super.key});

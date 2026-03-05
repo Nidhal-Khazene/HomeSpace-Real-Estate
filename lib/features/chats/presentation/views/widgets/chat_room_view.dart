@@ -20,13 +20,14 @@ class ChatRoomView extends StatelessWidget {
           padding: kPrimaryScreenPadding,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               CustomAppBar(
                 title: "Robert daniel",
                 textStyle: AppStyles.medium16,
                 profileImageWidget: Image(image: profileImage),
               ),
-              MessagesSection(),
+              const MessagesSection(),
               const ChatsMessageBar(),
             ],
           ),

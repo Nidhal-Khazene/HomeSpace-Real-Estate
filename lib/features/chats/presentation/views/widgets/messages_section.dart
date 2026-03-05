@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/features/chats/presentation/views/widgets/normal_message.dart';
 
 class MessagesSection extends StatelessWidget {
   const MessagesSection({super.key});
@@ -7,8 +8,11 @@ class MessagesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.only(top: 32, bottom: 16),
-        child: Column(children: []),
+        padding: EdgeInsets.only(bottom: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [NormalMessage()],
+        ),
       ),
     );
   }

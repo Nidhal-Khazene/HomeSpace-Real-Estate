@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/assets.dart';
+import 'package:home_space/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:home_space/features/auth/presentation/views/finish_sign_up_view.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
 import 'package:home_space/features/auth/presentation/views/widgets/login_or_sign_up_password.dart';
@@ -11,7 +12,6 @@ import 'package:home_space/features/chats/presentation/views/widgets/chat_room_v
 import 'package:home_space/features/favourites/presentation/views/favourites_view.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/no_listing_on_your_whishlist_yet.dart';
 import 'package:home_space/features/home/presentation/views/home_view.dart';
-import 'package:home_space/features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 import 'package:home_space/features/home/presentation/views/widgets/home_notification_view.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_image_view.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_view.dart';
