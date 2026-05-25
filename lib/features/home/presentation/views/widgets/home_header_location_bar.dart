@@ -47,7 +47,7 @@ class HomeHeaderLocationBar extends StatelessWidget {
                   angle: -math.pi / 2,
                   child: Icon(
                     Icons.arrow_back_ios_new,
-                    size: 20,
+                    size: 16,
                     color: ColorsData.kFontPrimaryColor,
                   ),
                 ),
