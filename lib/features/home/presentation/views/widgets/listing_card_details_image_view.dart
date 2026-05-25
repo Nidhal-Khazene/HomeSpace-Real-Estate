@@ -26,13 +26,15 @@ class _ListingCardDetailsImageViewState
 
   @override
   void initState() {
-    _carouselController = CarouselController();
-    _carouselController.animateTo(
-      150,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.ease,
-    );
     super.initState();
+    _carouselController = CarouselController();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _carouselController.animateTo(
+        150,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.ease,
+      );
+    });
   }
 
   @override
