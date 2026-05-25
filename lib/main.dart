@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:home_space/features/splash/presentation/views/splash_view.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/routing/on_generate_route.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
 import 'package:home_space/core/utils/colors.dart';
-import 'package:home_space/shared/widgets/custom_bottom_navigation_bar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

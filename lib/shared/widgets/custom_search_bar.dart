@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
+import 'package:iconly/iconly.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({
@@ -19,10 +18,7 @@ class CustomSearchBar extends StatelessWidget {
     return TextField(
       enabled: state,
       decoration: InputDecoration(
-        prefixIcon: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          child: SvgPicture.asset(Assets.assetsImagesIconsSearchIcon),
-        ),
+        prefixIcon: const Icon(IconlyBroken.search, color: Colors.black),
         filled: true,
         fillColor: ColorsData.kNotReadyButtonColor,
         hintText: textContent,
