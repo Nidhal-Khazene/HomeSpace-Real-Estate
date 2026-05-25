@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/features/settings/presentation/views/widgets/settings_view_body.dart';
 
 class SettingsView extends StatelessWidget {

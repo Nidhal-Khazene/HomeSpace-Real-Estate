@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_search_bar.dart';
+import 'package:home_space/shared/widgets/custom_search_bar.dart';
 
 import 'bottom_sheet_line_header.dart';
 
@@ -33,7 +33,7 @@ class _SearchBottomSheetViewState extends State<SearchBottomSheetView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height - 46,
         child: Column(

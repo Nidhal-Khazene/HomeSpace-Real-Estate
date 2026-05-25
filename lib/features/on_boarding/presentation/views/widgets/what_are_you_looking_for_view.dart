@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_oval_container.dart';
+import 'package:home_space/shared/widgets/custom_oval_container.dart';
 
 class WhatAreYouLookingForView extends StatefulWidget {
   const WhatAreYouLookingForView({super.key});

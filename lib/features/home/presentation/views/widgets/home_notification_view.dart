@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
-import 'package:home_space/core/models/list_tile_model.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/models/list_tile_model.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
 
 class HomeNotificationView extends StatelessWidget {
   const HomeNotificationView({super.key});

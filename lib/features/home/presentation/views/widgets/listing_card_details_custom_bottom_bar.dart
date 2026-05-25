@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:home_space/features/home/presentation/views/widgets/more_actions_bottom_sheet.dart';
 import 'package:home_space/features/home/presentation/views/widgets/send_enquiry_view.dart';
 
-import '../../../../../constants.dart';
+import '../../../../../shared/constants.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/custom_circle_container.dart';
-import '../../../../../core/widgets/custom_three_dots.dart';
+import '../../../../../shared/widgets/custom_button.dart';
+import '../../../../../shared/widgets/custom_circle_container.dart';
+import '../../../../../shared/widgets/custom_three_dots.dart';
 
 class ListingCardDetailsCustomBottomBar extends StatelessWidget {
   const ListingCardDetailsCustomBottomBar({super.key});

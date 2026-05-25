@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/custom_go_back_button.dart';
-import 'package:home_space/core/widgets/custom_text_field.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_go_back_button.dart';
+import 'package:home_space/shared/widgets/custom_text_field.dart';
 import 'package:home_space/features/auth/presentation/views/widgets/password_reset_link_view.dart';
 
 class ResetPasswordView extends StatefulWidget {

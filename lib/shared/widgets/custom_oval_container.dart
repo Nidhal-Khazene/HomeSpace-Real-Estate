@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/colors.dart';
 
-import '../utils/styles.dart';
+import '../../core/utils/styles.dart';
 
 class CustomOvalContainer extends StatelessWidget {
   const CustomOvalContainer({

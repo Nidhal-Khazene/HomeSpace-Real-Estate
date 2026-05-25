@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 
 class ListingCardCarouselViewDotsIndicator extends StatefulWidget {
   const ListingCardCarouselViewDotsIndicator({

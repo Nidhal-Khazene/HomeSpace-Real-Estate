@@ -25,9 +25,9 @@ class PaymentChartItem extends StatelessWidget {
             shape: const OvalBorder(),
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Text(title, style: AppStyles.regular12),
-        Expanded(child: SizedBox()),
+        const Expanded(child: SizedBox()),
         Text('\$$price', style: AppStyles.regular12),
       ],
     );

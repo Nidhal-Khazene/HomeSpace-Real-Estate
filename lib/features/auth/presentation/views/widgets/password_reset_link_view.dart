@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
 
 class PasswordResetLinkView extends StatelessWidget {

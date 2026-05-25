@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/custom_text_field.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_text_field.dart';
 import 'package:home_space/features/settings/presentation/views/widgets/monthly_payment_breakdown_view.dart';
 
 import '../../../../../core/utils/colors.dart';

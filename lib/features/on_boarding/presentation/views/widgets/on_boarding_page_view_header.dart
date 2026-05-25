@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_go_back_button.dart';
+import 'package:home_space/shared/widgets/custom_go_back_button.dart';
 
 import 'custom_scroll_container.dart';
 

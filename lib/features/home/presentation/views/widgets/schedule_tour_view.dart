@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/custom_calendar.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_calendar.dart';
 import 'package:home_space/features/home/presentation/views/widgets/select_time_choice_chip_list_view.dart';
 
 class ScheduleTourView extends StatelessWidget {

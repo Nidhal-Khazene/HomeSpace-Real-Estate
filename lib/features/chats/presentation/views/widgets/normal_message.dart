@@ -8,7 +8,7 @@ class NormalMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 32),
+      padding: const EdgeInsets.only(top: 32),
       child: Container(
         width: 240,
         decoration: ShapeDecoration(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/features/auth/presentation/views/widgets/login_or_sign_up_view.dart';
 
 class LoginViewBody extends StatelessWidget {

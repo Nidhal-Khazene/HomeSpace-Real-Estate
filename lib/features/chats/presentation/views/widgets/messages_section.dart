@@ -6,7 +6,7 @@ class MessagesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return const Expanded(
       child: Padding(
         padding: EdgeInsets.only(bottom: 16),
         child: Column(

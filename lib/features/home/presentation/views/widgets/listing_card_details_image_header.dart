@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
+import '../../../../../shared/constants.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_go_back_button.dart';
+import '../../../../../shared/widgets/custom_go_back_button.dart';
 
 class ListingCardDetailsImageHeader extends StatefulWidget {
   const ListingCardDetailsImageHeader({

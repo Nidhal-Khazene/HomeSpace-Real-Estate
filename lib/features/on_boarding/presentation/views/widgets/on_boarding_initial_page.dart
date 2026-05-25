@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
 import 'package:home_space/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../shared/widgets/custom_button.dart';
 
 class OnBoardingInitialPage extends StatelessWidget {
   const OnBoardingInitialPage({super.key});

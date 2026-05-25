@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../utils/colors.dart';
+import '../../core/utils/colors.dart';
 import 'custom_oval_container.dart';
 
 class CustomAddMedia extends StatelessWidget {

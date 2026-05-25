@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../../core/functions/show_snack_bar.dart';
+import '../../../../../shared/functions/show_snack_bar.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
-import '../../../../../core/widgets/custom_go_back_button.dart';
-import '../../../../../core/widgets/custom_oval_container.dart';
+import '../../../../../shared/widgets/custom_go_back_button.dart';
+import '../../../../../shared/widgets/custom_oval_container.dart';
 
 class ListingCardDetailsAppBar extends StatefulWidget {
   const ListingCardDetailsAppBar({super.key});

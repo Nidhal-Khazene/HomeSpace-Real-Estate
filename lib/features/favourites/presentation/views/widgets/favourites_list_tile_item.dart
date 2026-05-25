@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_three_dots.dart';
+import 'package:home_space/shared/widgets/custom_three_dots.dart';
 
 class FavouritesListTileItem extends StatelessWidget {
   const FavouritesListTileItem({

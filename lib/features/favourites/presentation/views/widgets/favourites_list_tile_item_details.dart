@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
-import 'package:home_space/core/functions/show_snack_bar.dart';
-import 'package:home_space/core/models/listing_card_model.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/functions/show_snack_bar.dart';
+import 'package:home_space/shared/models/listing_card_model.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/favourites_listing_card.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 

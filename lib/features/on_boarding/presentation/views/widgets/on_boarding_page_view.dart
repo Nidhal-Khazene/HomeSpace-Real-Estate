@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
 import 'package:home_space/features/on_boarding/presentation/views/widgets/on_boarding_page_view_body.dart';
 import 'package:home_space/features/on_boarding/presentation/views/widgets/on_boarding_page_view_header.dart';

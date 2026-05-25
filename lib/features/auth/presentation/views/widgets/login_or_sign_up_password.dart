@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/custom_text_field.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_text_field.dart';
 import 'package:home_space/features/auth/presentation/views/finish_sign_up_view.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
 import 'package:home_space/features/auth/presentation/views/widgets/reset_password_view.dart';
 
-import '../../../../../core/widgets/custom_go_back_button.dart';
+import '../../../../../shared/widgets/custom_go_back_button.dart';
 
 class LoginOrSignUpPassword extends StatelessWidget {
   const LoginOrSignUpPassword({super.key});

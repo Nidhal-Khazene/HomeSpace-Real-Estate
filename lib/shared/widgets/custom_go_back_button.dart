@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home_space/core/utils/assets.dart';
 
-import '../utils/colors.dart';
+import '../../core/utils/colors.dart';
 
 class CustomGoBackButton extends StatelessWidget {
   const CustomGoBackButton({

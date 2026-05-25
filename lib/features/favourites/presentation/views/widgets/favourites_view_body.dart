@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:home_space/constants.dart';
-import 'package:home_space/core/models/list_tile_model.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/models/list_tile_model.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/custom_text_field.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/custom_text_field.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/favourites_list_tile_item.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/favourites_list_tile_item_details.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/no_listing_on_your_whishlist_yet.dart';
@@ -38,7 +38,7 @@ class FavouritesViewBody extends StatelessWidget {
                     barrierDismissible: true,
                     barrierLabel: '',
                     transitionDuration: const Duration(milliseconds: 300),
-                    pageBuilder: (_, __, ___) {
+                    pageBuilder: (_, _, _) {
                       return Center(
                         child: Material(
                           borderRadius: BorderRadius.circular(20),
@@ -84,7 +84,7 @@ class FavouritesViewBody extends StatelessWidget {
                         ),
                       );
                     },
-                    transitionBuilder: (_, anim, __, child) {
+                    transitionBuilder: (_, anim, _, child) {
                       return Transform.scale(
                         scale: anim.value,
                         child: Opacity(opacity: anim.value, child: child),

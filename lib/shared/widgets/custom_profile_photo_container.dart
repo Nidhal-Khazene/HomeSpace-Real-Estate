@@ -31,7 +31,11 @@ class CustomProfilePhotoContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
-              child: Icon(Iconsax.camera_copy, size: 12, color: Colors.white),
+              child: const Icon(
+                Iconsax.camera_copy,
+                size: 12,
+                color: Colors.white,
+              ),
             ),
           ),
         ],

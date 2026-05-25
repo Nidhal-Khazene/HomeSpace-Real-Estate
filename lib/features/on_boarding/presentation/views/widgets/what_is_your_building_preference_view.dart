@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_circle_container.dart';
+import 'package:home_space/shared/widgets/custom_circle_container.dart';
 import 'package:home_space/features/on_boarding/presentation/views/widgets/custom_property_type_container.dart';
 
 class WhatIsYourBuildingPreferenceView extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
-import 'package:home_space/core/widgets/custom_oval_container.dart';
+import 'package:home_space/shared/widgets/custom_oval_container.dart';
 import 'package:home_space/features/home/presentation/views/widgets/home_notification_view.dart';
 
 import 'home_header_location_bar.dart';

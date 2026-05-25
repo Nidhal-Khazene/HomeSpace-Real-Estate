@@ -4,8 +4,8 @@ import 'package:home_space/features/auth/presentation/views/widgets/login_or_sig
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../../../shared/widgets/custom_button.dart';
+import '../../../../../shared/widgets/custom_text_field.dart';
 import 'custom_social_media_button.dart';
 
 class LoginOrSignUpView extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_price_field.dart';
+import 'package:home_space/shared/widgets/custom_price_field.dart';
 
 class WhatIsYourPriceRange extends StatelessWidget {
   const WhatIsYourPriceRange({super.key});

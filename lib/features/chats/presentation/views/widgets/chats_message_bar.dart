@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_add_media.dart';
-import 'package:home_space/core/widgets/custom_text_field.dart';
+import 'package:home_space/shared/widgets/custom_add_media.dart';
+import 'package:home_space/shared/widgets/custom_text_field.dart';
 
 class ChatsMessageBar extends StatefulWidget {
   const ChatsMessageBar({super.key});

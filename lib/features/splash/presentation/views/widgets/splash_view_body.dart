@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
 import 'package:home_space/features/on_boarding/presentation/views/on_boarding_view.dart';

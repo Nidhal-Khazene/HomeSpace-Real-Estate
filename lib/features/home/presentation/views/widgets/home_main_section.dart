@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_search_bar.dart';
+import '../../../../../shared/widgets/custom_search_bar.dart';
 import 'category_chips.dart';
 import 'listing_card.dart';
 

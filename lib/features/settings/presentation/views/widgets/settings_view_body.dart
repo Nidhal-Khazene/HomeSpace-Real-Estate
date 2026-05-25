@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/core/models/list_tile_model.dart';
+import 'package:home_space/shared/models/list_tile_model.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/features/settings/presentation/views/widgets/contact_support_view.dart';
@@ -9,7 +9,7 @@ import 'package:home_space/features/settings/presentation/views/widgets/mortgage
 import 'package:home_space/features/settings/presentation/views/widgets/settings_notifications_view.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../../core/functions/build_list_tile_border.dart';
+import '../../../../../shared/functions/build_list_tile_border.dart';
 
 class SettingsViewBody extends StatelessWidget {
   const SettingsViewBody({super.key});

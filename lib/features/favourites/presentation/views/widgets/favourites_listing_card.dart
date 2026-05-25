@@ -3,7 +3,7 @@ import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/features/home/presentation/views/widgets/Listing_card_properties_row.dart';
 
-import '../../../../../constants.dart';
+import '../../../../../shared/constants.dart';
 
 class FavouritesListingCard extends StatelessWidget {
   const FavouritesListingCard({
@@ -28,7 +28,7 @@ class FavouritesListingCard extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFE9E8E8)),
+          side: const BorderSide(width: 1, color: Color(0xFFE9E8E8)),
           borderRadius: BorderRadius.circular(8),
         ),
       ),

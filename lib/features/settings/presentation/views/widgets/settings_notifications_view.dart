@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
-import 'package:home_space/core/models/list_tile_model.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/models/list_tile_model.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
-import 'package:home_space/core/widgets/custom_button.dart';
-import 'package:home_space/core/widgets/toggle_container_switch.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_button.dart';
+import 'package:home_space/shared/widgets/toggle_container_switch.dart';
 
 class SettingsNotificationsView extends StatelessWidget {
   const SettingsNotificationsView({super.key});

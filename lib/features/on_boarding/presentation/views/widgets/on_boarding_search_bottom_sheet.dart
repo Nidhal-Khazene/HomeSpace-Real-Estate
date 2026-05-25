@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/custom_search_bar.dart';
-import '../../../../../core/widgets/search_bottom_sheet_view.dart';
+import '../../../../../shared/widgets/custom_search_bar.dart';
+import '../../../../../shared/widgets/search_bottom_sheet_view.dart';
 
 class SearchBottomSheet extends StatefulWidget {
   const SearchBottomSheet({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/core/models/payment_item_model.dart';
+import 'package:home_space/shared/models/payment_item_model.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/features/settings/presentation/views/widgets/payment_chart_item.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../constants.dart';
-import '../utils/assets.dart';
-import '../utils/colors.dart';
-import '../utils/styles.dart';
+import '../constants.dart';
+import '../../core/utils/assets.dart';
+import '../../core/utils/colors.dart';
+import '../../core/utils/styles.dart';
 
 void showSnackBar(BuildContext context, {required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/core/functions/build_list_tile_border.dart';
+import 'package:home_space/shared/functions/build_list_tile_border.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_circle_container.dart';
+import 'package:home_space/shared/widgets/custom_circle_container.dart';
 import 'package:home_space/features/chats/presentation/views/widgets/chat_room_view.dart';
 
 class ChatsViewBody extends StatelessWidget {

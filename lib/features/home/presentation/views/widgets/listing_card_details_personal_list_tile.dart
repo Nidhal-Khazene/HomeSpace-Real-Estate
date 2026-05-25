@@ -4,7 +4,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_oval_container.dart';
+import '../../../../../shared/widgets/custom_oval_container.dart';
 
 class ListingCardDetailsPersonalListTile extends StatelessWidget {
   const ListingCardDetailsPersonalListTile({super.key});

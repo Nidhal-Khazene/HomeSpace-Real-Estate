@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/constants.dart';
+import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/core/widgets/custom_app_bar.dart';
+import 'package:home_space/shared/widgets/custom_app_bar.dart';
 import 'package:home_space/features/settings/presentation/views/widgets/custom_asked_question.dart';
 
-import '../../../../../core/widgets/custom_search_bar.dart';
+import '../../../../../shared/widgets/custom_search_bar.dart';
 
 class HelpCenter extends StatelessWidget {
   const HelpCenter({super.key});
