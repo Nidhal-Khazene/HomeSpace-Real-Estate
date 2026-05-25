@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/assets.dart';
+import 'package:home_space/features/chats/presentation/views/widgets/no_message_yet_in_your_inbox_view.dart';
 import 'package:home_space/shared/widgets/custom_bottom_navigation_bar.dart';
 import 'package:home_space/features/auth/presentation/views/finish_sign_up_view.dart';
 import 'package:home_space/features/auth/presentation/views/login_view.dart';
@@ -121,12 +122,17 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SettingsNotificationsView(),
       );
+    // Chats
     case ChatsView.routeName:
       return MaterialPageRoute(builder: (context) => const ChatsView());
     case ChatRoomView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ChatRoomView(),
         settings: settings,
+      );
+    case NoMessageYetInYourInboxView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const NoMessageYetInYourInboxView(),
       );
     default:
       return null;
