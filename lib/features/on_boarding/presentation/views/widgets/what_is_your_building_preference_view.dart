@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home_space/core/utils/assets.dart';
@@ -73,14 +75,11 @@ class _WhatIsYourBuildingPreferenceViewState
                 vertical: 21,
                 horizontal: 10,
               ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: SvgPicture.asset(
-                  Assets.assetsImagesIconsArrowDown,
-                  colorFilter: const ColorFilter.mode(
-                    Colors.black,
-                    BlendMode.srcIn,
-                  ),
+              suffixIcon: Transform.rotate(
+                angle: -math.pi / 2,
+                child: const Icon(
+                  Icons.arrow_back_ios_new,
+                  color: Colors.black,
                 ),
               ),
               hintText: "Property Status",
