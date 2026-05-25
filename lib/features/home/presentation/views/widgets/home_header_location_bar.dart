@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -41,7 +43,14 @@ class HomeHeaderLocationBar extends StatelessWidget {
               const Expanded(child: SizedBox(width: 8)),
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: SvgPicture.asset(Assets.assetsImagesIconsArrowDown),
+                child: Transform.rotate(
+                  angle: -math.pi / 2,
+                  child: Icon(
+                    Icons.arrow_back_ios_new,
+                    size: 20,
+                    color: ColorsData.kFontPrimaryColor,
+                  ),
+                ),
               ),
             ],
           ),

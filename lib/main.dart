@@ -30,7 +30,7 @@ class HomeSpace extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoutes,
-      initialRoute: NoMessageYetInYourInboxView.routeName,
+      initialRoute: CustomBottomNavigationBar.routeName,
     );
   }
 }
