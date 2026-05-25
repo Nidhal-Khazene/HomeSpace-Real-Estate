@@ -17,34 +17,36 @@ class SendEnquirySuccessView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: kPrimaryScreenPadding,
-          child: Column(
-            children: [
-              const SizedBox(height: 278),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 59 - 24),
-                child: Column(
-                  children: [
-                    SvgPicture.asset(Assets.assetsImagesIconsSuccessButton),
-                    const SizedBox(height: 24),
-                    Text(
-                      "Your enquiry has been sent ",
-                      textAlign: TextAlign.center,
-                      style: AppStyles.medium24,
-                    ),
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 278),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 59 - 24),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(Assets.assetsImagesIconsSuccessButton),
+                      const SizedBox(height: 24),
+                      Text(
+                        "Your enquiry has been sent ",
+                        textAlign: TextAlign.center,
+                        style: AppStyles.medium24,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 238),
-              CustomButton(
-                onTap: () {
-                  Navigator.pushReplacementNamed(
-                    context,
-                    CustomBottomNavigationBar.routeName,
-                  );
-                },
-                textContent: "Return To Home",
-              ),
-            ],
+                const SizedBox(height: 200),
+                CustomButton(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      CustomBottomNavigationBar.routeName,
+                    );
+                  },
+                  textContent: "Return To Home",
+                ),
+              ],
+            ),
           ),
         ),
       ),
