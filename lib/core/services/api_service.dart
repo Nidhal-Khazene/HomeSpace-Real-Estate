@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiService {
   final Dio _dio;
-  final String baseUrl = "https://www.googleapis.com/books/v1/";
+  final String baseUrl = "https://api.rentcast.io/v1/listings/sale/";
   final String apiKey = dotenv.get('RENTCAST_API_KEY');
   ApiService(this._dio);
 

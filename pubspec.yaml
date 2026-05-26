@@ -45,6 +45,7 @@ dependencies:
   iconly: ^1.0.1
   dio: ^5.9.2
   flutter_dotenv: ^6.0.1
+  get_it: ^9.2.1
 
 dev_dependencies:
   flutter_test:
