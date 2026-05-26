@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/features/chats/presentation/views/widgets/no_message_yet_in_your_inbox_view.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/routing/on_generate_route.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
