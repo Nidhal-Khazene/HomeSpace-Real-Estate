@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:home_space/core/services/hive_boxes.dart';
-import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
+import 'package:home_space/core/services/setup_hive.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/routing/on_generate_route.dart';
 import 'package:home_space/core/services/shared_preferences_singleton.dart';
@@ -14,9 +12,7 @@ void main() async {
   await dotenv.load();
   await SharedPreferencesSingleton.init();
 
-  await Hive.initFlutter();
-  Hive.registerAdapter(SaleListingsEntityAdapter());
-  await Hive.openBox<SaleListingsEntity>(HiveBoxes.kSaleListings);
+  setupHive();
   runApp(const HomeSpace());
 }
 
