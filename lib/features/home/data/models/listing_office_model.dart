@@ -1,5 +1,3 @@
-import '../../domain/entities/listing_office_entity.dart';
-
 class ListingOfficeModel {
   String? name;
   String? phone;
@@ -16,25 +14,10 @@ class ListingOfficeModel {
         website: json['website'] as String?,
       );
 
-  factory ListingOfficeModel.fromEntity(ListingOfficeEntity e) =>
-      ListingOfficeModel(
-        name: e.name,
-        phone: e.phone,
-        email: e.email,
-        website: e.website,
-      );
-
   Map<String, dynamic> toJson() => {
     'name': name,
     'phone': phone,
     'email': email,
     'website': website,
   };
-
-  ListingOfficeEntity toEntity() => ListingOfficeEntity(
-    name: name,
-    phone: phone,
-    email: email,
-    website: website,
-  );
 }
