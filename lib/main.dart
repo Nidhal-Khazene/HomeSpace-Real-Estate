@@ -12,7 +12,7 @@ void main() async {
   await dotenv.load();
   await SharedPreferencesSingleton.init();
 
-  setupHive();
+  await setupHive();
   runApp(const HomeSpace());
 }
 
