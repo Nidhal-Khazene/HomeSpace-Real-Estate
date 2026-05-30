@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:home_space/shared/functions/show_failure_snack_bar.dart';
+import 'package:home_space/shared/functions/show_snack_bar.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../../shared/functions/show_snack_bar.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../shared/widgets/custom_go_back_button.dart';
@@ -35,7 +36,9 @@ class _ListingCardDetailsAppBarState extends State<ListingCardDetailsAppBar> {
               isLoved = !isLoved;
             });
             if (isLoved) {
-              showSnackBar(context, message: "Saved to Favourites");
+              showSuccessSnackBar(context, message: "Saved to Favourites");
+            } else {
+              showFailureSnackBar(context, message: "Removed from Favourites");
             }
           },
           height: 40,

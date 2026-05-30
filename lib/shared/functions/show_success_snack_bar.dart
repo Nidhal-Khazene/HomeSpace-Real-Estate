@@ -6,7 +6,7 @@ import '../../core/utils/assets.dart';
 import '../../core/utils/colors.dart';
 import '../../core/utils/styles.dart';
 
-void showSnackBar(BuildContext context, {required String message}) {
+void showSuccessSnackBar(BuildContext context, {required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       elevation: 0,

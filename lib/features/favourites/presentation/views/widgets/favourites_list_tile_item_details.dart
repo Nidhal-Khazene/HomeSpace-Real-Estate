@@ -92,7 +92,10 @@ class _FavouritesListTileItemDetailsState
                       onDismissed: (DismissDirection direction) {
                         setState(() {
                           listingCardList.removeAt(index);
-                          showSnackBar(context, message: "Listing was deleted");
+                          showSuccessSnackBar(
+                            context,
+                            message: "Listing was deleted",
+                          );
                         });
                       },
                       key: ValueKey(listingCardList[index].title),

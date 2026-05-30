@@ -10,7 +10,7 @@ List<SaleListingsEntity> getDummySaleListings() {
       bedrooms: 4,
       bathrooms: 2.5,
       squareFootage: 2300,
-      lotSize: 0.25,
+      lotSize: 0,
       city: 'Austin',
     ),
     SaleListingsEntity(
@@ -32,7 +32,7 @@ List<SaleListingsEntity> getDummySaleListings() {
       bedrooms: 4,
       bathrooms: 3.0,
       squareFootage: 2100,
-      lotSize: 0.1,
+      lotSize: 0,
       city: 'Denver',
     ),
     SaleListingsEntity(
@@ -43,7 +43,7 @@ List<SaleListingsEntity> getDummySaleListings() {
       bedrooms: 2,
       bathrooms: 2.0,
       squareFootage: 1120,
-      lotSize: 0.08,
+      lotSize: 0,
       city: 'Orlando',
     ),
     SaleListingsEntity(
@@ -54,7 +54,7 @@ List<SaleListingsEntity> getDummySaleListings() {
       bedrooms: 5,
       bathrooms: 4.0,
       squareFootage: 3200,
-      lotSize: 0.5,
+      lotSize: 0,
       city: 'Seattle',
     ),
   ];
