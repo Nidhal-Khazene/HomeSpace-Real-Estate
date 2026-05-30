@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home_space/shared/functions/show_failure_snack_bar.dart';
-import 'package:home_space/shared/functions/show_snack_bar.dart';
+import 'package:home_space/shared/functions/show_success_snack_bar.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../../core/utils/assets.dart';

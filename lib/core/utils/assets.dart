@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/icons/minus.svg
   static const String assetsImagesIconsMinus = "assets/images/icons/minus.svg";
 
+  /// Assets for assetsImagesIconsNoData
+  /// assets/images/icons/no_data.svg
+  static const String assetsImagesIconsNoData = "assets/images/icons/no_data.svg";
+
   /// Assets for assetsImagesIconsNotificationIcon
   /// assets/images/icons/notification_icon.svg
   static const String assetsImagesIconsNotificationIcon = "assets/images/icons/notification_icon.svg";
