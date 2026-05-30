@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_carousel_view_dots_indicator.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_view.dart';
 import 'package:home_space/features/home/presentation/views/widgets/whited_heart_oval_container.dart';
@@ -10,8 +11,13 @@ import 'for_sale_container.dart';
 import 'listing_card_carousel_view.dart';
 
 class ListingCard extends StatefulWidget {
-  const ListingCard({super.key, required this.image});
+  const ListingCard({
+    super.key,
+    required this.image,
+    required this.saleListingsEntity,
+  });
   final String image;
+  final SaleListingsEntity saleListingsEntity;
 
   @override
   State<ListingCard> createState() => _ListingCardState();
@@ -40,7 +46,11 @@ class _ListingCardState extends State<ListingCard> {
     itemExtent = MediaQuery.sizeOf(context).width;
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ListingCardDetailsView.routeName);
+        Navigator.pushNamed(
+          context,
+          ListingCardDetailsView.routeName,
+          arguments: widget.saleListingsEntity,
+        );
       },
       child: AspectRatio(
         aspectRatio:
@@ -60,6 +70,7 @@ class _ListingCardState extends State<ListingCard> {
               ListingCardCarouselView(
                 carouselController: _carouselController,
                 image: widget.image,
+                saleListingsEntity: widget.saleListingsEntity,
               ),
               const Positioned(top: 12, left: 12, child: ForSaleContainer()),
               const Positioned(
@@ -82,14 +93,14 @@ class _ListingCardState extends State<ListingCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      r"$450/Week",
+                      '\$${widget.saleListingsEntity.price.toString()}',
                       style: AppStyles.medium12.copyWith(
                         color: ColorsData.kMediumPrimaryColor,
                       ),
                     ),
                     const SizedBox(height: 17),
                     Text(
-                      "4517 Washington Ave. Manchester, Kentucky 39495",
+                      widget.saleListingsEntity.formattedAddress,
                       style: AppStyles.regular12,
                     ),
                     const SizedBox(height: 12),

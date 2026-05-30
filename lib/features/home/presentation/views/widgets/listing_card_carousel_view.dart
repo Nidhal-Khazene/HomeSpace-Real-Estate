@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_view.dart';
 
 class ListingCardCarouselView extends StatelessWidget {
@@ -6,10 +7,12 @@ class ListingCardCarouselView extends StatelessWidget {
     super.key,
     required CarouselController carouselController,
     required this.image,
+    required this.saleListingsEntity,
   }) : _carouselController = carouselController;
 
   final CarouselController _carouselController;
   final String image;
+  final SaleListingsEntity saleListingsEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,11 @@ class ListingCardCarouselView extends StatelessWidget {
       height: 220,
       child: CarouselView(
         onTap: (index) {
-          Navigator.pushNamed(context, ListingCardDetailsView.routeName);
+          Navigator.pushNamed(
+            context,
+            ListingCardDetailsView.routeName,
+            arguments: saleListingsEntity,
+          );
         },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         itemSnapping: true,

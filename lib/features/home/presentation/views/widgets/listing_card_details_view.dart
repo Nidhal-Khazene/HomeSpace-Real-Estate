@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
@@ -11,9 +12,10 @@ import 'listing_card_details_custom_bottom_bar.dart';
 import 'listing_card_details_personal_list_tile.dart';
 
 class ListingCardDetailsView extends StatelessWidget {
-  const ListingCardDetailsView({super.key});
+  const ListingCardDetailsView({super.key, required this.saleListingsEntity});
 
   static const String routeName = "ListingCardDetailsView";
+  final SaleListingsEntity saleListingsEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +35,14 @@ class ListingCardDetailsView extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  r"$450/Week",
+                  "\$${saleListingsEntity.price.toString()}",
                   style: AppStyles.medium12.copyWith(
                     color: ColorsData.kMediumPrimaryColor,
                   ),
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  "4519 Washington Ave. Manchester, Kentucky 39494",
+                  saleListingsEntity.formattedAddress,
                   style: AppStyles.medium16,
                 ),
                 const SizedBox(height: 16),
