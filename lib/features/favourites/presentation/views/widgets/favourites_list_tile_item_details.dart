@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/shared/constants.dart';
-import 'package:home_space/shared/functions/show_snack_bar.dart';
+import 'package:home_space/shared/functions/show_success_snack_bar.dart';
 import 'package:home_space/shared/models/listing_card_model.dart';
 import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/styles.dart';

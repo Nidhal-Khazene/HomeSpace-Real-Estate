@@ -1,26 +1,37 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets.dart';
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'listing_card_property_with_value.dart';
 
 class ListingCardPropertiesRow extends StatelessWidget {
-  const ListingCardPropertiesRow({super.key, this.sizeProperty});
+  const ListingCardPropertiesRow({
+    super.key,
+    this.sizeProperty,
+    this.saleListingsEntity,
+  });
   final double? sizeProperty;
+  final SaleListingsEntity? saleListingsEntity;
 
   @override
   Widget build(BuildContext context) {
+    final bedrooms = saleListingsEntity?.bedrooms.toString() ?? "3";
+    final bathrooms = saleListingsEntity?.bathrooms.toString() ?? "2";
+    final squareFootage =
+        saleListingsEntity?.squareFootage.toString() ?? "1200";
+
     return Row(
       children: [
         ListingCardPropertyWithValue(
           sizeProperty: sizeProperty,
           property: Assets.assetsImagesIconsBedRoomIcon,
-          value: "3",
+          value: bedrooms,
         ),
         const SizedBox(width: 16),
         ListingCardPropertyWithValue(
           sizeProperty: sizeProperty,
           property: Assets.assetsImagesIconsBathRoomIcon,
-          value: "2",
+          value: bathrooms,
         ),
         const SizedBox(width: 16),
         ListingCardPropertyWithValue(
@@ -32,7 +43,7 @@ class ListingCardPropertiesRow extends StatelessWidget {
         ListingCardPropertyWithValue(
           sizeProperty: sizeProperty,
           property: Assets.assetsImagesIconsTwoCardsIcon,
-          value: "1200sqt",
+          value: "${squareFootage}sqt",
         ),
       ],
     );

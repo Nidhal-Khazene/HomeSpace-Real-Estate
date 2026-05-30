@@ -46,9 +46,13 @@ class ListingCardDetailsView extends StatelessWidget {
                   style: AppStyles.medium16,
                 ),
                 const SizedBox(height: 16),
-                const ListingCardPropertiesRow(),
+                ListingCardPropertiesRow(
+                  saleListingsEntity: saleListingsEntity,
+                ),
                 const SizedBox(height: 24),
-                const ListingCardDetailsPersonalListTile(),
+                ListingCardDetailsPersonalListTile(
+                  saleListingsEntity: saleListingsEntity,
+                ),
                 const SizedBox(height: 24),
                 const Text.rich(
                   TextSpan(

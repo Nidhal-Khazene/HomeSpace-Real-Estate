@@ -104,7 +104,9 @@ class _ListingCardState extends State<ListingCard> {
                       style: AppStyles.regular12,
                     ),
                     const SizedBox(height: 12),
-                    const ListingCardPropertiesRow(),
+                    ListingCardPropertiesRow(
+                      saleListingsEntity: widget.saleListingsEntity,
+                    ),
                   ],
                 ),
               ),

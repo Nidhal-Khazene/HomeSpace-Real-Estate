@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../../core/utils/assets.dart';
@@ -7,7 +8,11 @@ import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_oval_container.dart';
 
 class ListingCardDetailsPersonalListTile extends StatelessWidget {
-  const ListingCardDetailsPersonalListTile({super.key});
+  const ListingCardDetailsPersonalListTile({
+    super.key,
+    this.saleListingsEntity,
+  });
+  final SaleListingsEntity? saleListingsEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,10 @@ class ListingCardDetailsPersonalListTile extends StatelessWidget {
       leading: const CircleAvatar(
         backgroundImage: AssetImage(Assets.assetsImagesPersonalImage2),
       ),
-      title: Text("Robert daniel", style: AppStyles.regular16),
+      title: Text(
+        saleListingsEntity?.agentName ?? "Robert daniel",
+        style: AppStyles.regular16,
+      ),
       trailing: CustomOvalContainer(
         borderColor: Colors.transparent,
         backgroundColor: ColorsData.kMediumPrimaryColor,
