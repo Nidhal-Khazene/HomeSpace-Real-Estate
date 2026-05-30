@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/features/home/presentation/views/widgets/sale_listings_list_view.dart';
+import 'package:home_space/features/home/presentation/views/widgets/sale_listings_list_view_bloc_consumer.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_search_bar.dart';
@@ -23,7 +23,7 @@ class HomeMainSection extends StatelessWidget {
           const SizedBox(height: 16),
           const CategoryChips(),
           const SizedBox(height: 16),
-          const SaleListingsListView(),
+          const SaleListingsListViewBlocConsumer(),
         ],
       ),
     );

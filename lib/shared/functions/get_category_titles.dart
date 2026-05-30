@@ -1,3 +1,3 @@
 List<String> getCategoryTitles() {
-  return ['Single Family', 'Condo', 'Manufactured'];
+  return ['All', 'Single Family', 'Condo', 'Manufactured'];
 }
