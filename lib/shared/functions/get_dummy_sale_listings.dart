@@ -1,0 +1,61 @@
+import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
+
+List<SaleListingsEntity> getDummySaleListings() {
+  return [
+    SaleListingsEntity(
+      price: 479000,
+      formattedAddress: '123 Maple Street, Austin, TX',
+      agentName: 'Taylor West',
+      propertyType: 'Single Family',
+      bedrooms: 4,
+      bathrooms: 2.5,
+      squareFootage: 2300,
+      lotSize: 0.25,
+      city: 'Austin',
+    ),
+    SaleListingsEntity(
+      price: 385000,
+      formattedAddress: '789 Oak Avenue, Charlotte, NC',
+      agentName: 'Jordan Miles',
+      propertyType: 'Condo',
+      bedrooms: 3,
+      bathrooms: 2.0,
+      squareFootage: 1450,
+      lotSize: 0,
+      city: 'Charlotte',
+    ),
+    SaleListingsEntity(
+      price: 599999,
+      formattedAddress: '456 Pine Lane, Denver, CO',
+      agentName: 'Avery Brooks',
+      propertyType: 'Townhouse',
+      bedrooms: 4,
+      bathrooms: 3.0,
+      squareFootage: 2100,
+      lotSize: 0.1,
+      city: 'Denver',
+    ),
+    SaleListingsEntity(
+      price: 249900,
+      formattedAddress: '231 Cedar Court, Orlando, FL',
+      agentName: 'Mia Carter',
+      propertyType: 'Manufactured',
+      bedrooms: 2,
+      bathrooms: 2.0,
+      squareFootage: 1120,
+      lotSize: 0.08,
+      city: 'Orlando',
+    ),
+    SaleListingsEntity(
+      price: 895000,
+      formattedAddress: '12 Birch Drive, Seattle, WA',
+      agentName: 'Evan Brooks',
+      propertyType: 'Single Family',
+      bedrooms: 5,
+      bathrooms: 4.0,
+      squareFootage: 3200,
+      lotSize: 0.5,
+      city: 'Seattle',
+    ),
+  ];
+}
