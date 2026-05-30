@@ -14,14 +14,14 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
   @override
   Future<List<SaleListingsEntity>> getSaleListings({int pageNumber = 0}) async {
-    List<Map<String, dynamic>> data = await apiService.get(
+    final data = await apiService.get(
       endPoint:
           "${BackendBreakpoint.kGetSaleListings}?city=Austin&state=TX&status=Active&limit=10&offset=${pageNumber * 10}",
     );
     return getListings(data);
   }
 
-  List<SaleListingsEntity> getListings(List<Map<String, dynamic>> data) {
+  List<SaleListingsEntity> getListings(data) {
     List<SaleListingsEntity> listings = [];
     for (var dataMap in data) {
       listings.add(SaleListingsModel.fromJson(dataMap));

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:home_space/core/services/service_locator.dart';
 import 'package:home_space/core/services/setup_hive.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/routing/on_generate_route.dart';
@@ -10,6 +11,7 @@ import 'package:home_space/shared/widgets/custom_bottom_navigation_bar.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
+  serviceLocator();
   await SharedPreferencesSingleton.init();
 
   await setupHive();
