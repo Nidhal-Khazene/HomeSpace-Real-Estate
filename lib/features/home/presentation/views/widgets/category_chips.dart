@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/styles.dart';
+import 'package:home_space/shared/functions/get_category_titles.dart';
 
 import '../../../../../core/utils/colors.dart';
 
@@ -13,13 +14,7 @@ class CategoryChips extends StatefulWidget {
 class _CategoryChipsState extends State<CategoryChips> {
   int _selectedIndex = 0;
 
-  final List<String> categories = [
-    "Apartment",
-    "House",
-    "Villa",
-    "House",
-    "Villa",
-  ];
+  final List<String> categories = getCategoryTitles();
 
   @override
   Widget build(BuildContext context) {
