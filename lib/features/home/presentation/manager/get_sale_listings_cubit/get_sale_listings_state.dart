@@ -19,11 +19,10 @@ final class GetSaleListingsFailure extends GetSaleListingsState {
   GetSaleListingsFailure({required this.errMessage});
 }
 
-// Pagination States
+final class GetSaleListingsPaginationLoading extends GetSaleListingsState {}
+
 final class GetSaleListingsPaginationFailure extends GetSaleListingsState {
   final String errMessage;
 
   GetSaleListingsPaginationFailure({required this.errMessage});
 }
-
-final class GetSaleListingsPaginationLoading extends GetSaleListingsState {}
