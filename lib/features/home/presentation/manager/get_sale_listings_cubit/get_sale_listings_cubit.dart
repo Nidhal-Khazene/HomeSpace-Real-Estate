@@ -9,19 +9,39 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
   GetSaleListingsCubit({required this.getSaleListingsUseCase})
     : super(GetSaleListingsInitial());
   final GetSaleListingsUseCase getSaleListingsUseCase;
-  Future<dynamic> getSaleListings({int pageNumber = 0}) async {
-    if (pageNumber == 0) {
+  int _pageNumber = 1;
+  bool _isLoading = false;
+  final List<SaleListingsEntity> _saleListings = [];
+
+  Future<dynamic> getSaleListings({bool isRefresh = false}) async {
+    if (_isLoading) return;
+    
+    if (isRefresh) {
+      _pageNumber = 1;
+      _saleListings.clear();
+    }
+
+    _isLoading = true;
+
+    if (_pageNumber == 1) {
       emit(GetSaleListingsLoading());
     } else {
       emit(GetSaleListingsPaginationLoading());
     }
-    var result = await getSaleListingsUseCase.call(pageNumber);
+
+    var result = await getSaleListingsUseCase.call(_pageNumber);
     result.fold((failure) {
-      if (pageNumber == 0) {
+      _isLoading = false;
+      if (_pageNumber == 1) {
         emit(GetSaleListingsFailure(errMessage: failure.errMessage));
       } else {
         emit(GetSaleListingsPaginationFailure(errMessage: failure.errMessage));
       }
-    }, (listings) => emit(GetSaleListingsSuccess(listings: listings)));
+    }, (listings) {
+      _isLoading = false;
+      _pageNumber++;
+      _saleListings.addAll(listings);
+      emit(GetSaleListingsSuccess(listings: List.from(_saleListings)));
+    });
   }
 }
