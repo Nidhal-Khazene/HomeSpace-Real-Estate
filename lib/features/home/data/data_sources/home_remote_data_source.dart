@@ -3,6 +3,7 @@ import 'package:home_space/core/services/backend_breakpoint.dart';
 import 'package:home_space/features/home/data/models/sale_listings_model.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/functions/get_category_titles.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<SaleListingsEntity>> getSaleListings({int pageNumber = 0});
@@ -16,8 +17,16 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<List<SaleListingsEntity>> getSaleListings({int pageNumber = 0}) async {
     final data = await apiService.get(
-      endPoint:
-          "${BackendBreakpoint.kGetSaleListings}?city=Austin&state=TX&status=Active&limit=$kApiPaginationLimit&offset=${pageNumber * 10}",
+      endPoint: BackendBreakpoint.kGetSaleListings,
+      queryParameters: {
+        'city': 'Austin',
+        'state': 'TX',
+        'status': 'Active',
+        'propertyType': getCategoryTitles(),
+        'bedrooms': [2, 3],
+        'limit': kApiPaginationLimit,
+        'offset': pageNumber * kApiPaginationLimit,
+      },
     );
     return getListings(data);
   }
