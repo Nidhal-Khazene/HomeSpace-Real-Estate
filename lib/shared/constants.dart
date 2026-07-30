@@ -14,3 +14,5 @@ const double kNormalRadiusChart = 30;
 const double kTouchedRadiusChart = 40;
 
 const int kApiPaginationLimit = 20;
+
+const int kSnackBarDuration = 1;

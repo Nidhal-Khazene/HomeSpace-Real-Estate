@@ -13,12 +13,18 @@ void showFailureSnackBar(BuildContext context, {required String message}) {
       backgroundColor: Colors.white,
       content: Row(
         children: [
-          SvgPicture.asset(Assets.assetsImagesIconsFalseIcon),
+          SvgPicture.asset(
+            Assets.assetsImagesIconsFalseIcon,
+            width: 24,
+            height: 24,
+          ),
           const SizedBox(width: 12),
-          Text(
-            message,
-            style: AppStyles.regular12.copyWith(
-              color: ColorsData.kFontPrimaryColor,
+          Expanded(
+            child: Text(
+              message,
+              style: AppStyles.regular12.copyWith(
+                color: ColorsData.kFontPrimaryColor,
+              ),
             ),
           ),
         ],
@@ -29,7 +35,7 @@ void showFailureSnackBar(BuildContext context, {required String message}) {
         horizontal: kHorizontalPadding,
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: kSnackBarDuration),
     ),
   );
 }
