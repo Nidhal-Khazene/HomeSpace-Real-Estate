@@ -7,8 +7,15 @@ import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_search_bar.dart';
 import 'category_chips.dart';
 
-class HomeMainSection extends StatelessWidget {
+class HomeMainSection extends StatefulWidget {
   const HomeMainSection({super.key});
+
+  @override
+  State<HomeMainSection> createState() => _HomeMainSectionState();
+}
+
+class _HomeMainSectionState extends State<HomeMainSection> {
+  int propertyTypeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,7 @@ class HomeMainSection extends StatelessWidget {
       onNotification: (notification) {
         final pixels = notification.metrics.pixels;
         final max = notification.metrics.maxScrollExtent;
-        if (pixels >= max * 0.7) {
+        if (pixels >= max * 0.9) {
           context.read<GetSaleListingsCubit>().getSaleListings();
         }
         return false;
@@ -32,7 +39,11 @@ class HomeMainSection extends StatelessWidget {
             const SizedBox(height: 32),
             Text("Listings Nearby", style: AppStyles.medium16),
             const SizedBox(height: 16),
-            const CategoryChips(),
+            CategoryChips(
+              onTap: (index) {
+                propertyTypeIndex = index;
+              },
+            ),
             const SizedBox(height: 16),
             const SaleListingsListViewBlocConsumer(),
           ],

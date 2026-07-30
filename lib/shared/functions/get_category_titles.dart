@@ -6,7 +6,7 @@ List<String> getCategoryTitles() {
     'Townhouse',
     'Manufactured',
     'Multi-Family',
-    'Multi-Family',
+    'Apartment',
     'Land',
   ];
 }
