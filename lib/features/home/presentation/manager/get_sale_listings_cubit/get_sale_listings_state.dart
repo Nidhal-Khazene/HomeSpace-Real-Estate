@@ -26,3 +26,5 @@ final class GetSaleListingsPaginationFailure extends GetSaleListingsState {
 
   GetSaleListingsPaginationFailure({required this.errMessage});
 }
+
+final class GetSaleListingsFilterLoading extends GetSaleListingsState {}

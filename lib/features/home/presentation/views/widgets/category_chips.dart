@@ -28,21 +28,19 @@ class _CategoryChipsState extends State<CategoryChips> {
         itemBuilder: (context, index) {
           final bool isSelected = _selectedIndex == index;
 
-          return GestureDetector(
-            onTap: () => widget.onTap(_selectedIndex),
-
-            child: ChoiceChip(
-              pressElevation: 0,
-              elevation: 0,
-              showCheckmark: false,
-              label: Text(categories[index]),
-              selected: isSelected,
-              onSelected: (_) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              backgroundColor: Colors.transparent,
+          return ChoiceChip(
+            pressElevation: 0,
+            elevation: 0,
+            showCheckmark: false,
+            label: Text(categories[index]),
+            selected: isSelected,
+            onSelected: (_) {
+              setState(() {
+                _selectedIndex = index;
+              });
+              widget.onTap(index);
+            },
+            backgroundColor: Colors.transparent,
               selectedColor: ColorsData.kMediumPrimaryColor,
               labelStyle: AppStyles.regular12.copyWith(
                 color: isSelected
@@ -57,7 +55,6 @@ class _CategoryChipsState extends State<CategoryChips> {
                 ),
                 borderRadius: BorderRadius.circular(33),
               ),
-            ),
           );
         },
       ),

@@ -22,7 +22,8 @@ class _SaleListingsListViewBlocConsumerState
       buildWhen: (previous, current) {
         return current is GetSaleListingsLoading ||
             current is GetSaleListingsSuccess ||
-            current is GetSaleListingsFailure;
+            current is GetSaleListingsFailure ||
+            current is GetSaleListingsFilterLoading;
       },
       listener: (context, state) {
         if (state is GetSaleListingsPaginationFailure) {
@@ -36,7 +37,15 @@ class _SaleListingsListViewBlocConsumerState
           return Skeletonizer(
             child: SaleListingsListView(saleListings: getDummySaleListings()),
           );
+        } else if (state is GetSaleListingsFilterLoading) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 40.0),
+            child: Center(child: CircularProgressIndicator()),
+          );
         } else if (state is GetSaleListingsSuccess) {
+          if (state.listings.isEmpty) {
+            return const CustomNoDataView();
+          }
           return SaleListingsListView(saleListings: state.listings);
         } else {
           return const CustomNoDataView();

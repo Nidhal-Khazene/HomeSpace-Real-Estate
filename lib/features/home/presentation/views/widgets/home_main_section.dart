@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_space/features/home/presentation/manager/get_sale_listings_cubit/get_sale_listings_cubit.dart';
@@ -16,14 +17,20 @@ class HomeMainSection extends StatefulWidget {
 }
 
 class _HomeMainSectionState extends State<HomeMainSection> {
-  int propertyTypeIndex = 0;
+  Timer? _debounce;
 
   @override
   void initState() {
-    if (propertyTypeIndex == 0) {
+    if (context.read<GetSaleListingsCubit>().state is GetSaleListingsInitial) {
       context.read<GetSaleListingsCubit>().getSaleListings();
     }
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    super.dispose();
   }
 
   @override
@@ -32,8 +39,16 @@ class _HomeMainSectionState extends State<HomeMainSection> {
       onNotification: (notification) {
         final pixels = notification.metrics.pixels;
         final max = notification.metrics.maxScrollExtent;
+        // Don't paginate if the content hasn't exceeded the screen size
+        if (max == 0) return false;
+        
         if (pixels >= max * 0.9) {
-          context.read<GetSaleListingsCubit>().getSaleListings();
+          if (_debounce?.isActive ?? false) return false;
+          _debounce = Timer(const Duration(milliseconds: 200), () {
+            if (mounted) {
+              context.read<GetSaleListingsCubit>().getSaleListings();
+            }
+          });
         }
         return false;
       },
@@ -50,14 +65,9 @@ class _HomeMainSectionState extends State<HomeMainSection> {
             const SizedBox(height: 16),
             CategoryChips(
               onTap: (index) {
-                propertyTypeIndex = index;
-                if (propertyTypeIndex != 0) {
-                  context.read<GetSaleListingsCubit>().getSaleListings(
-                    queryParameters: {
-                      'propertyType': getCategoryTitles()[propertyTypeIndex],
-                    },
-                  );
-                }
+                context.read<GetSaleListingsCubit>().filterByCategory(
+                  getCategoryTitles()[index],
+                );
               },
             ),
             const SizedBox(height: 16),

@@ -19,34 +19,11 @@ class ApiService {
     required String endPoint,
     Map<String, dynamic>? queryParameters,
   }) async {
-    Map<String, dynamic>? processedQueryParameters;
-    processedQueryParameters = handleQueryParameters(
-      queryParameters,
-      processedQueryParameters,
-    );
-
     var response = await _dio.get(
       endPoint,
-      queryParameters: processedQueryParameters,
+      queryParameters: queryParameters,
     );
 
     return response.data;
-  }
-
-  Map<String, dynamic>? handleQueryParameters(
-    Map<String, dynamic>? queryParameters,
-    Map<String, dynamic>? processedQueryParameters,
-  ) {
-    if (queryParameters != null) {
-      processedQueryParameters = {};
-      queryParameters.forEach((key, value) {
-        if (value is List) {
-          processedQueryParameters![key] = value.join('|');
-        } else {
-          processedQueryParameters![key] = value;
-        }
-      });
-    }
-    return processedQueryParameters;
   }
 }
