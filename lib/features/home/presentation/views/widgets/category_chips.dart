@@ -19,18 +19,19 @@ class _CategoryChipsState extends State<CategoryChips> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => widget.onTap(_selectedIndex),
-      child: SizedBox(
-        height: 50, // fixed height for horizontal chips
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: categories.length,
-          separatorBuilder: (_, _) => const SizedBox(width: 16),
-          itemBuilder: (context, index) {
-            final bool isSelected = _selectedIndex == index;
+    return SizedBox(
+      height: 50, // fixed height for horizontal chips
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemCount: categories.length,
+        separatorBuilder: (_, _) => const SizedBox(width: 16),
+        itemBuilder: (context, index) {
+          final bool isSelected = _selectedIndex == index;
 
-            return ChoiceChip(
+          return GestureDetector(
+            onTap: () => widget.onTap(_selectedIndex),
+
+            child: ChoiceChip(
               pressElevation: 0,
               elevation: 0,
               showCheckmark: false,
@@ -56,9 +57,9 @@ class _CategoryChipsState extends State<CategoryChips> {
                 ),
                 borderRadius: BorderRadius.circular(33),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

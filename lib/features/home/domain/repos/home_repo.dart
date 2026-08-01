@@ -5,5 +5,6 @@ import 'package:home_space/features/home/domain/entities/sale_listings_entity.da
 abstract class HomeRepo {
   Future<Either<Failures, List<SaleListingsEntity>>> getSaleListings({
     int pageNumber = 0,
+    Map<String, dynamic>? queryParameters,
   });
 }

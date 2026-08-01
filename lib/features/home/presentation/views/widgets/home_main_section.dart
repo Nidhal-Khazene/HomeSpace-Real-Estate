@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_space/features/home/presentation/manager/get_sale_listings_cubit/get_sale_listings_cubit.dart';
 import 'package:home_space/features/home/presentation/views/widgets/sale_listings_list_view_bloc_consumer.dart';
+import 'package:home_space/shared/functions/get_category_titles.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_search_bar.dart';
@@ -16,6 +17,14 @@ class HomeMainSection extends StatefulWidget {
 
 class _HomeMainSectionState extends State<HomeMainSection> {
   int propertyTypeIndex = 0;
+
+  @override
+  void initState() {
+    if (propertyTypeIndex == 0) {
+      context.read<GetSaleListingsCubit>().getSaleListings();
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +51,13 @@ class _HomeMainSectionState extends State<HomeMainSection> {
             CategoryChips(
               onTap: (index) {
                 propertyTypeIndex = index;
+                if (propertyTypeIndex != 0) {
+                  context.read<GetSaleListingsCubit>().getSaleListings(
+                    queryParameters: {
+                      'propertyType': getCategoryTitles()[propertyTypeIndex],
+                    },
+                  );
+                }
               },
             ),
             const SizedBox(height: 16),

@@ -6,7 +6,10 @@ import 'package:home_space/shared/constants.dart';
 import 'package:home_space/shared/functions/get_category_titles.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<SaleListingsEntity>> getSaleListings({int pageNumber = 0});
+  Future<List<SaleListingsEntity>> getSaleListings({
+    int pageNumber = 0,
+    Map<String, dynamic>? queryParameters,
+  });
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -15,18 +18,23 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   HomeRemoteDataSourceImpl({required this.apiService});
 
   @override
-  Future<List<SaleListingsEntity>> getSaleListings({int pageNumber = 0}) async {
+  Future<List<SaleListingsEntity>> getSaleListings({
+    int pageNumber = 0,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final data = await apiService.get(
       endPoint: BackendBreakpoint.kGetSaleListings,
-      queryParameters: {
-        'city': 'Austin',
-        'state': 'TX',
-        'status': 'Active',
-        'propertyType': getCategoryTitles(),
-        'bedrooms': [2, 3],
-        'limit': kApiPaginationLimit,
-        'offset': pageNumber * kApiPaginationLimit,
-      },
+      queryParameters:
+          queryParameters ??
+          {
+            'city': 'Austin',
+            'state': 'TX',
+            'status': 'Active',
+            'propertyType': getCategoryTitles(),
+            'bedrooms': [2, 3],
+            'limit': kApiPaginationLimit,
+            'offset': pageNumber * kApiPaginationLimit,
+          },
     );
     return getListings(data);
   }

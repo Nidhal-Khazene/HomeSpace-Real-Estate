@@ -10,8 +10,12 @@ class GetSaleListingsUseCase extends UseCase<List<SaleListingsEntity>, int> {
   GetSaleListingsUseCase({required this.homeRepo});
   @override
   Future<Either<Failures, List<SaleListingsEntity>>> call([
-    int pageNumber = 0,
+    int? pageNumber = 0,
+    dynamic queryParameters,
   ]) async {
-    return await homeRepo.getSaleListings(pageNumber: pageNumber);
+    return await homeRepo.getSaleListings(
+      pageNumber: pageNumber ?? 0,
+      queryParameters: queryParameters as Map<String, dynamic>?,
+    );
   }
 }
