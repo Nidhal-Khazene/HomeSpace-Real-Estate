@@ -32,7 +32,7 @@ class _ListingCardDetailsCarouselViewState
 
   @override
   Widget build(BuildContext context) {
-    itemExtent = MediaQuery.sizeOf(context).width;
+    itemExtent = MediaQuery.sizeOf(context).width - kHorizontalPadding * 2;
     return AspectRatio(
       aspectRatio:
           MediaQuery.sizeOf(context).height *

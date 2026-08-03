@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_view.dart';
+import 'package:home_space/shared/functions/get_dummy_listing_card_details_images.dart';
 
 class ListingCardCarouselView extends StatelessWidget {
   const ListingCardCarouselView({
@@ -31,7 +32,7 @@ class ListingCardCarouselView extends StatelessWidget {
         controller: _carouselController,
         itemExtent: MediaQuery.sizeOf(context).width,
         children: List.generate(
-          4,
+          getDummyListingCardDetailsImages().length,
           (index) => Image(image: AssetImage(image), fit: BoxFit.cover),
         ),
       ),

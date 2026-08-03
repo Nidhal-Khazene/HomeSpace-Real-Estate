@@ -38,7 +38,7 @@ class _ListingCardDetailsImageViewState
 
   @override
   Widget build(BuildContext context) {
-    itemExtent = MediaQuery.sizeOf(context).width;
+    itemExtent = MediaQuery.sizeOf(context).width - kHorizontalPadding * 2;
     return Scaffold(
       backgroundColor: ColorsData.kFontPrimaryColor,
       body: SafeArea(
@@ -49,7 +49,7 @@ class _ListingCardDetailsImageViewState
               ListingCardDetailsImageHeader(
                 carouselController: _carouselController,
                 itemExtent: itemExtent,
-                listLength: widget.images.length - 1,
+                listLength: widget.images.length,
               ),
               const SizedBox(height: 130),
               ListingCardDetailsImageCarouselView(
@@ -60,7 +60,7 @@ class _ListingCardDetailsImageViewState
               ListingCardDetailsImageDotsIndicator(
                 carouselController: _carouselController,
                 itemExtent: itemExtent,
-                listLength: widget.images.length - 1,
+                listLength: widget.images.length,
               ),
             ],
           ),

@@ -5,6 +5,8 @@ import 'package:home_space/features/home/domain/entities/sale_listings_entity.da
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_carousel_view_dots_indicator.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_view.dart';
 import 'package:home_space/features/home/presentation/views/widgets/whited_heart_oval_container.dart';
+import 'package:home_space/shared/constants.dart';
+import 'package:home_space/shared/functions/get_dummy_listing_card_details_images.dart';
 
 import 'Listing_card_properties_row.dart';
 import 'for_sale_container.dart';
@@ -43,7 +45,7 @@ class _ListingCardState extends State<ListingCard> {
 
   @override
   Widget build(BuildContext context) {
-    itemExtent = MediaQuery.sizeOf(context).width;
+    itemExtent = MediaQuery.sizeOf(context).width - kHorizontalPadding * 2;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(
@@ -84,7 +86,7 @@ class _ListingCardState extends State<ListingCard> {
                 child: ListingCardCarouselViewDotsIndicator(
                   carouselController: _carouselController,
                   itemExtent: itemExtent,
-                  listLength: 4,
+                  listLength: getDummyListingCardDetailsImages().length,
                 ),
               ),
               Positioned(
