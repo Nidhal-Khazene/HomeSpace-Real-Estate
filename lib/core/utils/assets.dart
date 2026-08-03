@@ -186,9 +186,29 @@ class Assets {
   /// assets/images/listing_background_image_9.jpg
   static const String assetsImagesListingBackgroundImage9 = "assets/images/listing_background_image_9.jpg";
 
-  /// Assets for assetsImagesListingCardDetails
-  /// assets/images/listing_card_details.png
-  static const String assetsImagesListingCardDetails = "assets/images/listing_card_details.png";
+  /// Assets for assetsImagesListingCardDetails1
+  /// assets/images/listing_card_details_1.png
+  static const String assetsImagesListingCardDetails1 = "assets/images/listing_card_details_1.png";
+
+  /// Assets for assetsImagesListingCardDetails2
+  /// assets/images/listing_card_details_2.jpg
+  static const String assetsImagesListingCardDetails2 = "assets/images/listing_card_details_2.jpg";
+
+  /// Assets for assetsImagesListingCardDetails3
+  /// assets/images/listing_card_details_3.jpg
+  static const String assetsImagesListingCardDetails3 = "assets/images/listing_card_details_3.jpg";
+
+  /// Assets for assetsImagesListingCardDetails4
+  /// assets/images/listing_card_details_4.jpg
+  static const String assetsImagesListingCardDetails4 = "assets/images/listing_card_details_4.jpg";
+
+  /// Assets for assetsImagesListingCardDetails5
+  /// assets/images/listing_card_details_5.jpg
+  static const String assetsImagesListingCardDetails5 = "assets/images/listing_card_details_5.jpg";
+
+  /// Assets for assetsImagesListingCardDetails6
+  /// assets/images/listing_card_details_6.jpg
+  static const String assetsImagesListingCardDetails6 = "assets/images/listing_card_details_6.jpg";
 
   /// Assets for assetsImagesOnBoardingImage
   /// assets/images/on_boarding_image.jpg
