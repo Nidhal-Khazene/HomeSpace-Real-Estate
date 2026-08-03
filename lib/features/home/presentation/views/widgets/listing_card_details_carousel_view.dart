@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/shared/constants.dart';
-import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_carousel_view_dots_indicator.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_image_view.dart';
 
 class ListingCardDetailsCarouselView extends StatefulWidget {
-  const ListingCardDetailsCarouselView({super.key, required this.image});
-  final String image;
+  const ListingCardDetailsCarouselView({super.key, required this.images});
+  final List<String> images;
 
   @override
   State<ListingCardDetailsCarouselView> createState() =>
@@ -48,6 +47,7 @@ class _ListingCardDetailsCarouselViewState
                 Navigator.pushNamed(
                   context,
                   ListingCardDetailsImageView.routeName,
+                  arguments: widget.images,
                 );
               },
               shape: RoundedRectangleBorder(
@@ -57,19 +57,20 @@ class _ListingCardDetailsCarouselViewState
               controller: _carouselController,
               itemExtent: MediaQuery.sizeOf(context).width,
               children: List.generate(
-                4,
-                (index) => const Image(
-                  image: AssetImage(Assets.assetsImagesListingCardDetails),
+                widget.images.length,
+                (index) => Image(
+                  image: AssetImage(widget.images[index]),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Positioned(
-              left: ((MediaQuery.sizeOf(context).width - (24 * 2)) / 2) - 20,
+              left: ((MediaQuery.sizeOf(context).width - (24 * 3)) / 2) - 20,
               bottom: 24,
               child: ListingCardCarouselViewDotsIndicator(
                 itemExtent: itemExtent,
                 carouselController: _carouselController,
+                listLength: widget.images.length,
               ),
             ),
           ],

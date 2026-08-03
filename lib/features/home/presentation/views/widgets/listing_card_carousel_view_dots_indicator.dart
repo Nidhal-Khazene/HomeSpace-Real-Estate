@@ -6,10 +6,12 @@ class ListingCardCarouselViewDotsIndicator extends StatefulWidget {
     super.key,
     required this.carouselController,
     required this.itemExtent,
+    required this.listLength,
   });
 
   final CarouselController carouselController;
   final double itemExtent;
+  final int listLength;
 
   @override
   State<ListingCardCarouselViewDotsIndicator> createState() =>
@@ -18,7 +20,6 @@ class ListingCardCarouselViewDotsIndicator extends StatefulWidget {
 
 class _ListingCardCarouselViewDotsIndicatorState
     extends State<ListingCardCarouselViewDotsIndicator> {
-  int listLength = 4;
   int currentIndex = 0;
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _ListingCardCarouselViewDotsIndicatorState
     return Row(
       spacing: 8,
       children: List.generate(
-        listLength,
+        widget.listLength,
         (index) => AnimatedContainer(
           curve: Curves.easeIn,
           duration: const Duration(milliseconds: kMillisecondsDuration),

@@ -5,9 +5,11 @@ class ListingCardDetailsImageDotsIndicator extends StatefulWidget {
     super.key,
     required this.carouselController,
     required this.itemExtent,
+    required this.listLength,
   });
   final CarouselController carouselController;
   final double itemExtent;
+  final int listLength;
   @override
   State<ListingCardDetailsImageDotsIndicator> createState() =>
       _ListingCardDetailsImageDotsIndicatorState();
@@ -15,25 +17,26 @@ class ListingCardDetailsImageDotsIndicator extends StatefulWidget {
 
 class _ListingCardDetailsImageDotsIndicatorState
     extends State<ListingCardDetailsImageDotsIndicator> {
-  int listLength = 4;
   int currentIndex = 0;
   double totalWidth = 100;
   double dynamicWidth = 20;
   late double factorWidth;
   @override
   void initState() {
+    super.initState();
+    factorWidth = totalWidth / widget.listLength;
+    dynamicWidth = ((currentIndex + 1) * factorWidth);
     widget.carouselController.addListener(() {
       final double position = widget.carouselController.offset;
       final int newIndex = (position / widget.itemExtent).round();
       if (newIndex != currentIndex) {
         setState(() {
           currentIndex = newIndex;
-          factorWidth = totalWidth / listLength;
+          factorWidth = totalWidth / widget.listLength;
           dynamicWidth = ((currentIndex + 1) * factorWidth);
         });
       }
     });
-    super.initState();
   }
 
   @override

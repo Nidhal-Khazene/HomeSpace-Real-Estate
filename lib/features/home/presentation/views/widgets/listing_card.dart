@@ -84,6 +84,7 @@ class _ListingCardState extends State<ListingCard> {
                 child: ListingCardCarouselViewDotsIndicator(
                   carouselController: _carouselController,
                   itemExtent: itemExtent,
+                  listLength: 4,
                 ),
               ),
               Positioned(

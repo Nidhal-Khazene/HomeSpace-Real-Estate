@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/shared/constants.dart';
-import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_image_carousel_view.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_image_dots_indicator.dart';
@@ -8,9 +7,9 @@ import 'package:home_space/features/home/presentation/views/widgets/listing_card
 import 'listing_card_details_image_header.dart';
 
 class ListingCardDetailsImageView extends StatefulWidget {
-  const ListingCardDetailsImageView({super.key, required this.image});
+  const ListingCardDetailsImageView({super.key, required this.images});
 
-  final String image;
+  final List<String> images;
 
   static const routeName = "ListingCardDetailsImageView";
 
@@ -50,16 +49,18 @@ class _ListingCardDetailsImageViewState
               ListingCardDetailsImageHeader(
                 carouselController: _carouselController,
                 itemExtent: itemExtent,
+                listLength: widget.images.length - 1,
               ),
               const SizedBox(height: 130),
               ListingCardDetailsImageCarouselView(
                 carouselController: _carouselController,
-                image: Assets.assetsImagesListingCardDetails,
+                images: widget.images,
               ),
               const SizedBox(height: 151),
               ListingCardDetailsImageDotsIndicator(
                 carouselController: _carouselController,
                 itemExtent: itemExtent,
+                listLength: widget.images.length - 1,
               ),
             ],
           ),

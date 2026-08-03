@@ -4,8 +4,8 @@ import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_carousel_view.dart';
+import 'package:home_space/shared/functions/get_dummy_listing_card_details_images.dart';
 
-import '../../../../../core/utils/assets.dart';
 import 'Listing_card_properties_row.dart';
 import 'listing_card_details_app_bar.dart';
 import 'listing_card_details_custom_bottom_bar.dart';
@@ -30,8 +30,8 @@ class ListingCardDetailsView extends StatelessWidget {
               children: [
                 const ListingCardDetailsAppBar(),
                 const SizedBox(height: 32),
-                const ListingCardDetailsCarouselView(
-                  image: Assets.assetsImagesListingCardDetails,
+                ListingCardDetailsCarouselView(
+                  images: getDummyListingCardDetailsImages(),
                 ),
                 const SizedBox(height: 24),
                 Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/features/chats/presentation/views/widgets/no_message_yet_in_your_inbox_view.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'package:home_space/shared/widgets/custom_bottom_navigation_bar.dart';
@@ -76,9 +75,9 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
             ListingCardDetailsView(saleListingsEntity: saleListingsEntity),
       );
     case ListingCardDetailsImageView.routeName:
-      final String image = Assets.assetsImagesListingCardDetails;
+      final List<String> images = settings.arguments as List<String>;
       return MaterialPageRoute(
-        builder: (context) => ListingCardDetailsImageView(image: image),
+        builder: (context) => ListingCardDetailsImageView(images: images),
       );
     case SendEnquiryView.routeName:
       return MaterialPageRoute(builder: (context) => const SendEnquiryView());

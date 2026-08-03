@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/shared/constants.dart';
-import 'package:home_space/core/utils/assets.dart';
 
 class ListingCardDetailsImageCarouselView extends StatelessWidget {
   const ListingCardDetailsImageCarouselView({
     super.key,
-    required this.image,
+    required this.images,
     required this.carouselController,
   });
-  final String image;
+  final List<String> images;
   final CarouselController carouselController;
 
   @override
@@ -30,11 +29,9 @@ class ListingCardDetailsImageCarouselView extends StatelessWidget {
               controller: carouselController,
               itemExtent: MediaQuery.sizeOf(context).width,
               children: List.generate(
-                4,
-                (index) => const Image(
-                  image: AssetImage(Assets.assetsImagesListingCardDetails),
-                  fit: BoxFit.cover,
-                ),
+                images.length,
+                (index) =>
+                    Image(image: AssetImage(images[index]), fit: BoxFit.cover),
               ),
             ),
           ],

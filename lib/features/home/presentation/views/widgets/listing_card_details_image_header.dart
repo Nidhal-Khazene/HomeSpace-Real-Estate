@@ -9,10 +9,12 @@ class ListingCardDetailsImageHeader extends StatefulWidget {
     super.key,
     required this.carouselController,
     required this.itemExtent,
+    required this.listLength,
   });
 
   final CarouselController carouselController;
   final double itemExtent;
+  final int listLength;
 
   @override
   State<ListingCardDetailsImageHeader> createState() =>
@@ -21,7 +23,6 @@ class ListingCardDetailsImageHeader extends StatefulWidget {
 
 class _ListingCardDetailsImageHeaderState
     extends State<ListingCardDetailsImageHeader> {
-  int listLength = 4;
   int currentIndex = 0;
   @override
   void initState() {
@@ -54,7 +55,7 @@ class _ListingCardDetailsImageHeaderState
               20,
         ),
         Text(
-          "${currentIndex + 1}/$listLength",
+          "${currentIndex + 1}/${widget.listLength}",
           style: AppStyles.medium16.copyWith(color: Colors.white),
         ),
       ],

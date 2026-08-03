@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
-import 'package:home_space/shared/functions/get_dummy_listing_images_edit.dart';
+import 'package:home_space/shared/functions/get_dummy_listing_images.dart';
 import 'package:home_space/shared/functions/get_dummy_sale_listings.dart';
 import 'listing_card.dart';
 
