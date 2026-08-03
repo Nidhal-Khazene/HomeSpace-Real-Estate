@@ -28,3 +28,9 @@ final class GetSaleListingsPaginationFailure extends GetSaleListingsState {
 }
 
 final class GetSaleListingsFilterLoading extends GetSaleListingsState {}
+
+final class GetSaleListingsFilterSuccess extends GetSaleListingsState {
+  final List<SaleListingsEntity> listings;
+
+  GetSaleListingsFilterSuccess({required this.listings});
+}

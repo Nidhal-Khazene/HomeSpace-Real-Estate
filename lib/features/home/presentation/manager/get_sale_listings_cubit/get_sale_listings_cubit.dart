@@ -74,19 +74,26 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
     
     // Small delay to make the filter transition look smooth with the loading indicator
     Future.delayed(const Duration(milliseconds: 300), () {
-      if (!isClosed) _emitFilteredListings();
+      if (!isClosed) _emitFilteredListings(isLocalFilter: true);
     });
   }
 
-  void _emitFilteredListings() {
+  void _emitFilteredListings({bool isLocalFilter = false}) {
     if (isClosed) return;
+    
+    List<SaleListingsEntity> targetList = [];
     if (_currentPropertyType == 'All') {
-      emit(GetSaleListingsSuccess(listings: List.from(_allSaleListings)));
+      targetList = List.from(_allSaleListings);
     } else {
-      final filteredList = _allSaleListings.where((listing) {
+      targetList = _allSaleListings.where((listing) {
         return listing.propertyType.toLowerCase() == _currentPropertyType.toLowerCase();
       }).toList();
-      emit(GetSaleListingsSuccess(listings: filteredList));
+    }
+
+    if (isLocalFilter) {
+      emit(GetSaleListingsFilterSuccess(listings: targetList));
+    } else {
+      emit(GetSaleListingsSuccess(listings: targetList));
     }
   }
 }
