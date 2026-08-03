@@ -22,16 +22,24 @@ class HomeRepoImpl implements HomeRepo {
   }) async {
     try {
       List<SaleListingsEntity> listings;
-      listings = homeLocalDataSource.getSaleListings(pageNumber: pageNumber);
-      if (listings.isNotEmpty) {
-        return right(listings);
-      }
       listings = await homeRemoteDataSource.getSaleListings(
         pageNumber: pageNumber,
         queryParameters: queryParameters,
       );
+      
+      // Save successfully fetched data locally
+      if (listings.isNotEmpty) {
+        homeLocalDataSource.saveSaleListings(listings);
+      }
+      
       return right(listings);
-    } on Exception catch (e) {
+    } catch (e) {
+      // Fallback to local data if remote fails
+      List<SaleListingsEntity> localListings = homeLocalDataSource.getSaleListings(pageNumber: pageNumber);
+      if (localListings.isNotEmpty) {
+        return right(localListings);
+      }
+      
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       } else {

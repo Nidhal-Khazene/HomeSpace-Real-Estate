@@ -4,6 +4,7 @@ import 'package:home_space/features/home/domain/entities/sale_listings_entity.da
 
 abstract class HomeLocalDataSource {
   List<SaleListingsEntity> getSaleListings({int pageNumber = 0});
+  void saveSaleListings(List<SaleListingsEntity> listings);
 }
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
@@ -17,5 +18,11 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
       return [];
     }
     return box.values.toList().sublist(startIndex, endIndex);
+  }
+
+  @override
+  void saveSaleListings(List<SaleListingsEntity> listings) {
+    var box = Hive.box<SaleListingsEntity>(HiveBoxes.kSaleListings);
+    box.addAll(listings);
   }
 }

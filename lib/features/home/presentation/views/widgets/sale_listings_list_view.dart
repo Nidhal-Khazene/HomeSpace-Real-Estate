@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
+import 'package:home_space/shared/functions/get_dummy_listing_images_edit.dart';
 import 'package:home_space/shared/functions/get_dummy_sale_listings.dart';
 import 'listing_card.dart';
 
@@ -12,13 +12,7 @@ class SaleListingsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final listings = saleListings ?? getDummySaleListings();
-    final listingImages = [
-      Assets.assetsImagesListingBackgroundImage1,
-      Assets.assetsImagesListingBackgroundImage2,
-      Assets.assetsImagesListingBackgroundImage1,
-      Assets.assetsImagesListingBackgroundImage2,
-      Assets.assetsImagesListingBackgroundImage1,
-    ];
+    final listingImages = getDummyListingImages();
 
     return ListView.builder(
       shrinkWrap: true,

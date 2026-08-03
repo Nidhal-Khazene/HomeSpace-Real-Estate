@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_space/features/home/presentation/manager/get_sale_listings_cubit/get_sale_listings_cubit.dart';
@@ -17,41 +16,37 @@ class HomeMainSection extends StatefulWidget {
 }
 
 class _HomeMainSectionState extends State<HomeMainSection> {
-  Timer? _debounce;
+  // Prevents re-firing getSaleListings() on every scroll tick while the
+  // user is dragging within the last 10% of the list. Resets once they
+  // scroll back away from the threshold, so it can trigger again later.
+  bool _paginationTriggered = false;
 
-  @override
-  void initState() {
-    if (context.read<GetSaleListingsCubit>().state is GetSaleListingsInitial) {
+  bool _handleScrollNotification(ScrollUpdateNotification notification) {
+    // Only listen to the main vertical scroll view, not nested horizontal ones like CategoryChips
+    if (notification.depth != 0) return false;
+
+    final pixels = notification.metrics.pixels;
+    final max = notification.metrics.maxScrollExtent;
+
+    // Don't paginate if the content hasn't exceeded the screen size
+    if (max == 0) return false;
+
+    final isNearBottom = pixels >= max * 0.9;
+
+    if (isNearBottom && !_paginationTriggered) {
+      _paginationTriggered = true;
       context.read<GetSaleListingsCubit>().getSaleListings();
+    } else if (!isNearBottom) {
+      _paginationTriggered = false;
     }
-    super.initState();
-  }
 
-  @override
-  void dispose() {
-    _debounce?.cancel();
-    super.dispose();
+    return false;
   }
 
   @override
   Widget build(BuildContext context) {
     return NotificationListener<ScrollUpdateNotification>(
-      onNotification: (notification) {
-        final pixels = notification.metrics.pixels;
-        final max = notification.metrics.maxScrollExtent;
-        // Don't paginate if the content hasn't exceeded the screen size
-        if (max == 0) return false;
-        
-        if (pixels >= max * 0.9) {
-          if (_debounce?.isActive ?? false) return false;
-          _debounce = Timer(const Duration(milliseconds: 200), () {
-            if (mounted) {
-              context.read<GetSaleListingsCubit>().getSaleListings();
-            }
-          });
-        }
-        return false;
-      },
+      onNotification: _handleScrollNotification,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -134,9 +134,57 @@ class Assets {
   /// assets/images/listing_background_image_1.png
   static const String assetsImagesListingBackgroundImage1 = "assets/images/listing_background_image_1.png";
 
+  /// Assets for assetsImagesListingBackgroundImage10
+  /// assets/images/listing_background_image_10.jpg
+  static const String assetsImagesListingBackgroundImage10 = "assets/images/listing_background_image_10.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage11
+  /// assets/images/listing_background_image_11.jpg
+  static const String assetsImagesListingBackgroundImage11 = "assets/images/listing_background_image_11.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage12
+  /// assets/images/listing_background_image_12.jpg
+  static const String assetsImagesListingBackgroundImage12 = "assets/images/listing_background_image_12.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage13
+  /// assets/images/listing_background_image_13.jpg
+  static const String assetsImagesListingBackgroundImage13 = "assets/images/listing_background_image_13.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage14
+  /// assets/images/listing_background_image_14.jpg
+  static const String assetsImagesListingBackgroundImage14 = "assets/images/listing_background_image_14.jpg";
+
   /// Assets for assetsImagesListingBackgroundImage2
   /// assets/images/listing_background_image_2.png
   static const String assetsImagesListingBackgroundImage2 = "assets/images/listing_background_image_2.png";
+
+  /// Assets for assetsImagesListingBackgroundImage3
+  /// assets/images/listing_background_image_3.jpg
+  static const String assetsImagesListingBackgroundImage3 = "assets/images/listing_background_image_3.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage4
+  /// assets/images/listing_background_image_4.jpg
+  static const String assetsImagesListingBackgroundImage4 = "assets/images/listing_background_image_4.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage5
+  /// assets/images/listing_background_image_5.jpg
+  static const String assetsImagesListingBackgroundImage5 = "assets/images/listing_background_image_5.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage6
+  /// assets/images/listing_background_image_6.jpg
+  static const String assetsImagesListingBackgroundImage6 = "assets/images/listing_background_image_6.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage7
+  /// assets/images/listing_background_image_7.jpg
+  static const String assetsImagesListingBackgroundImage7 = "assets/images/listing_background_image_7.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage8
+  /// assets/images/listing_background_image_8.jpg
+  static const String assetsImagesListingBackgroundImage8 = "assets/images/listing_background_image_8.jpg";
+
+  /// Assets for assetsImagesListingBackgroundImage9
+  /// assets/images/listing_background_image_9.jpg
+  static const String assetsImagesListingBackgroundImage9 = "assets/images/listing_background_image_9.jpg";
 
   /// Assets for assetsImagesListingCardDetails
   /// assets/images/listing_card_details.png

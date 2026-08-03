@@ -34,3 +34,9 @@ final class GetSaleListingsFilterSuccess extends GetSaleListingsState {
 
   GetSaleListingsFilterSuccess({required this.listings});
 }
+
+final class GetSaleListingsFilterFailure extends GetSaleListingsState {
+  final String errMessage;
+
+  GetSaleListingsFilterFailure({required this.errMessage});
+}

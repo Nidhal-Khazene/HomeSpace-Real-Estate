@@ -8,16 +8,20 @@ part 'get_sale_listings_state.dart';
 class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
   GetSaleListingsCubit({required this.getSaleListingsUseCase})
     : super(GetSaleListingsInitial());
+
   final GetSaleListingsUseCase getSaleListingsUseCase;
+
   int _pageNumber = 1;
   bool _isLoading = false;
-  final List<SaleListingsEntity> _allSaleListings = [];
-  String _currentPropertyType = 'All';
   bool _hasMoreData = true;
+  String _currentPropertyType = 'All';
+  final List<SaleListingsEntity> _allSaleListings = [];
 
-  Future<dynamic> getSaleListings({
-    bool isRefresh = false,
-  }) async {
+  // Minimum number of matching items we want available before we stop
+  // auto-fetching more pages for the active filter. Tune to taste.
+  static const int _minFilteredResults = 10;
+
+  Future<void> getSaleListings({bool isRefresh = false}) async {
     if (_isLoading) return;
     if (!_hasMoreData && !isRefresh) return;
 
@@ -26,6 +30,7 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
       _allSaleListings.clear();
       _currentPropertyType = 'All';
       _hasMoreData = true;
+      _consecutiveAutoFetchCount = 0;
     }
 
     _isLoading = true;
@@ -36,14 +41,17 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
       emit(GetSaleListingsPaginationLoading());
     }
 
-    var result = await getSaleListingsUseCase.call(
+    final result = await getSaleListingsUseCase.call(
       _pageNumber,
       null, // Fetch all listings without backend propertyType filter
     );
+
+    if (isClosed) return;
+    _isLoading = false;
+
     result.fold(
       (failure) {
         if (isClosed) return;
-        _isLoading = false;
         if (_pageNumber == 1) {
           emit(GetSaleListingsFailure(errMessage: failure.errMessage));
         } else {
@@ -54,7 +62,6 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
       },
       (listings) {
         if (isClosed) return;
-        _isLoading = false;
         if (listings.isEmpty) {
           _hasMoreData = false;
         } else {
@@ -62,33 +69,66 @@ class GetSaleListingsCubit extends Cubit<GetSaleListingsState> {
           _allSaleListings.addAll(listings);
         }
         _emitFilteredListings();
+        _autoFetchMoreIfFilterIsThin();
       },
     );
   }
 
   void filterByCategory(String category) {
     if (_currentPropertyType == category) return;
-    
+
     _currentPropertyType = category;
+    _consecutiveAutoFetchCount = 0;
+
     if (!isClosed) emit(GetSaleListingsFilterLoading());
-    
-    // Small delay to make the filter transition look smooth with the loading indicator
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (!isClosed) _emitFilteredListings(isLocalFilter: true);
-    });
+    // No artificial delay: emit as soon as the filtered list is ready.
+    // If you want a smooth transition, animate it in the widget with
+    // an AnimatedSwitcher keyed off the state type instead of faking
+    // it with a Future.delayed here.
+    _emitFilteredListings(isLocalFilter: true);
+    _autoFetchMoreIfFilterIsThin();
+  }
+
+  int _consecutiveAutoFetchCount = 0;
+
+  /// Filtering can narrow the visible list down to just a few items,
+  /// which means the list may no longer scroll — and since pagination
+  /// is triggered by scroll position, the user would get stuck on a
+  /// near-empty filtered view with no way to load more. This keeps
+  /// fetching pages in the background until we have enough matches
+  /// for the active filter, or the backend runs out of data.
+  void _autoFetchMoreIfFilterIsThin() {
+    if (_currentPropertyType == 'All') return;
+    if (!_hasMoreData || _isLoading) return;
+
+    final filteredCount = _allSaleListings
+        .where(
+          (listing) =>
+              listing.propertyType.toLowerCase() ==
+              _currentPropertyType.toLowerCase(),
+        )
+        .length;
+
+    // Cap the number of consecutive auto-fetches to prevent infinite API call loops
+    // when a category has very few items in the entire database.
+    if (filteredCount < _minFilteredResults && _consecutiveAutoFetchCount < 3) {
+      _consecutiveAutoFetchCount++;
+      getSaleListings();
+    }
   }
 
   void _emitFilteredListings({bool isLocalFilter = false}) {
     if (isClosed) return;
-    
-    List<SaleListingsEntity> targetList = [];
-    if (_currentPropertyType == 'All') {
-      targetList = List.from(_allSaleListings);
-    } else {
-      targetList = _allSaleListings.where((listing) {
-        return listing.propertyType.toLowerCase() == _currentPropertyType.toLowerCase();
-      }).toList();
-    }
+
+    final targetList = _currentPropertyType == 'All'
+        ? List<SaleListingsEntity>.from(_allSaleListings)
+        : _allSaleListings
+              .where(
+                (listing) =>
+                    listing.propertyType.toLowerCase() ==
+                    _currentPropertyType.toLowerCase(),
+              )
+              .toList();
 
     if (isLocalFilter) {
       emit(GetSaleListingsFilterSuccess(listings: targetList));
