@@ -5,22 +5,47 @@ import 'package:home_space/shared/functions/get_category_titles.dart';
 import '../../../../../core/utils/colors.dart';
 
 class CategoryChips extends StatefulWidget {
-  const CategoryChips({super.key, required this.onTap});
+  const CategoryChips({
+    super.key,
+    required this.onTap,
+    this.selectedCategory = 'All',
+  });
+
   final void Function(int selectedIndex) onTap;
+  final String selectedCategory;
 
   @override
   State<CategoryChips> createState() => _CategoryChipsState();
 }
 
 class _CategoryChipsState extends State<CategoryChips> {
-  int _selectedIndex = 0;
-
+  late int _selectedIndex;
   final List<String> categories = getCategoryTitles();
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = categories.indexOf(widget.selectedCategory);
+    if (_selectedIndex == -1) _selectedIndex = 0;
+  }
+
+  @override
+  void didUpdateWidget(covariant CategoryChips oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.selectedCategory != widget.selectedCategory) {
+      final index = categories.indexOf(widget.selectedCategory);
+      if (index != -1 && index != _selectedIndex) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50, // fixed height for horizontal chips
+      height: 50,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -35,26 +60,26 @@ class _CategoryChipsState extends State<CategoryChips> {
             label: Text(categories[index]),
             selected: isSelected,
             onSelected: (_) {
-              setState(() {
-                _selectedIndex = index;
-              });
-              widget.onTap(index);
+              if (_selectedIndex != index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+                widget.onTap(index);
+              }
             },
             backgroundColor: Colors.transparent,
-              selectedColor: ColorsData.kMediumPrimaryColor,
-              labelStyle: AppStyles.regular12.copyWith(
+            selectedColor: ColorsData.kMediumPrimaryColor,
+            labelStyle: AppStyles.regular12.copyWith(
+              color: isSelected ? Colors.white : ColorsData.kFontSecondaryColor,
+            ),
+            shape: RoundedRectangleBorder(
+              side: BorderSide(
                 color: isSelected
-                    ? Colors.white
-                    : ColorsData.kFontSecondaryColor,
+                    ? ColorsData.kMediumPrimaryColor
+                    : ColorsData.kBorderColor,
               ),
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  color: isSelected
-                      ? ColorsData.kMediumPrimaryColor
-                      : ColorsData.kBorderColor,
-                ),
-                borderRadius: BorderRadius.circular(33),
-              ),
+              borderRadius: BorderRadius.circular(33),
+            ),
           );
         },
       ),

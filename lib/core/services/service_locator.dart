@@ -6,6 +6,7 @@ import 'package:home_space/features/home/data/data_sources/home_local_data_sourc
 import 'package:home_space/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:home_space/features/home/data/repos/home_repo_impl.dart';
 import 'package:home_space/features/home/domain/repos/home_repo.dart';
+import 'package:home_space/features/home/domain/use_cases/get_sale_listings_use_case.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -18,5 +19,8 @@ void serviceLocator() {
         apiService: getIt.get<ApiService>(),
       ),
     ),
+  );
+  getIt.registerFactory<GetSaleListingsUseCase>(
+    () => GetSaleListingsUseCase(homeRepo: getIt.get<HomeRepo>()),
   );
 }

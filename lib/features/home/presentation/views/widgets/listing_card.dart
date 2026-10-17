@@ -8,9 +8,9 @@ import 'package:home_space/features/home/presentation/views/widgets/whited_heart
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/shared/functions/get_dummy_listing_card_details_images.dart';
 
-import 'Listing_card_properties_row.dart';
 import 'for_sale_container.dart';
 import 'listing_card_carousel_view.dart';
+import 'listing_card_properties_row.dart';
 
 class ListingCard extends StatefulWidget {
   const ListingCard({
@@ -18,6 +18,7 @@ class ListingCard extends StatefulWidget {
     required this.image,
     required this.saleListingsEntity,
   });
+
   final String image;
   final SaleListingsEntity saleListingsEntity;
 
@@ -35,12 +36,19 @@ class _ListingCardState extends State<ListingCard> {
     super.initState();
     _carouselController = CarouselController();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       _carouselController.animateTo(
         150,
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
       );
     });
+  }
+
+  @override
+  void dispose() {
+    _carouselController.dispose();
+    super.dispose();
   }
 
   @override

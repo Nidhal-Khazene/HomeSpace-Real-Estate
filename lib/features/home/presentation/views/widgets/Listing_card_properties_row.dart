@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../core/utils/assets.dart';
+import 'package:home_space/core/utils/assets.dart';
 import 'package:home_space/features/home/domain/entities/sale_listings_entity.dart';
 import 'listing_card_property_with_value.dart';
 
@@ -10,6 +9,7 @@ class ListingCardPropertiesRow extends StatelessWidget {
     this.sizeProperty,
     this.saleListingsEntity,
   });
+
   final double? sizeProperty;
   final SaleListingsEntity? saleListingsEntity;
 

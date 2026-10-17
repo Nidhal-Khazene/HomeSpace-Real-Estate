@@ -16,38 +16,45 @@ class HomeMainSection extends StatefulWidget {
 }
 
 class _HomeMainSectionState extends State<HomeMainSection> {
-  // Prevents re-firing getSaleListings() on every scroll tick while the
-  // user is dragging within the last 10% of the list. Resets once they
-  // scroll back away from the threshold, so it can trigger again later.
-  bool _paginationTriggered = false;
+  late final ScrollController _scrollController;
 
-  bool _handleScrollNotification(ScrollUpdateNotification notification) {
-    // Only listen to the main vertical scroll view, not nested horizontal ones like CategoryChips
-    if (notification.depth != 0) return false;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController()..addListener(_onScroll);
+  }
 
-    final pixels = notification.metrics.pixels;
-    final max = notification.metrics.maxScrollExtent;
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
+  }
 
-    // Don't paginate if the content hasn't exceeded the screen size
-    if (max == 0) return false;
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    final maxScroll = _scrollController.position.maxScrollExtent;
+    final currentScroll = _scrollController.offset;
 
-    final isNearBottom = pixels >= max * 0.9;
-
-    if (isNearBottom && !_paginationTriggered) {
-      _paginationTriggered = true;
-      context.read<GetSaleListingsCubit>().getSaleListings();
-    } else if (!isNearBottom) {
-      _paginationTriggered = false;
+    if (currentScroll >= (maxScroll - 200) && maxScroll > 0) {
+      final cubit = context.read<GetSaleListingsCubit>();
+      if (!cubit.isLoading && cubit.hasMoreData) {
+        cubit.getSaleListings();
+      }
     }
-
-    return false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return NotificationListener<ScrollUpdateNotification>(
-      onNotification: _handleScrollNotification,
+    return RefreshIndicator(
+      onRefresh: () async {
+        await context
+            .read<GetSaleListingsCubit>()
+            .getSaleListings(isRefresh: true);
+      },
       child: SingleChildScrollView(
+        controller: _scrollController,
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -58,10 +65,19 @@ class _HomeMainSectionState extends State<HomeMainSection> {
             const SizedBox(height: 32),
             Text("Listings Nearby", style: AppStyles.medium16),
             const SizedBox(height: 16),
-            CategoryChips(
-              onTap: (index) {
-                context.read<GetSaleListingsCubit>().filterByCategory(
-                  getCategoryTitles()[index],
+            BlocBuilder<GetSaleListingsCubit, GetSaleListingsState>(
+              buildWhen: (previous, current) => current is GetSaleListingsSuccess,
+              builder: (context, state) {
+                final selectedCategory = state is GetSaleListingsSuccess
+                    ? state.selectedCategory
+                    : context.read<GetSaleListingsCubit>().currentPropertyType;
+                return CategoryChips(
+                  selectedCategory: selectedCategory,
+                  onTap: (index) {
+                    context.read<GetSaleListingsCubit>().filterByCategory(
+                          getCategoryTitles()[index],
+                        );
+                  },
                 );
               },
             ),

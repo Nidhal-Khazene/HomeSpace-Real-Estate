@@ -22,12 +22,19 @@ class _ListingCardDetailsCarouselViewState
     super.initState();
     _carouselController = CarouselController();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       _carouselController.animateTo(
         150,
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
       );
     });
+  }
+
+  @override
+  void dispose() {
+    _carouselController.dispose();
+    super.dispose();
   }
 
   @override

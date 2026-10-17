@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
-import 'package:home_space/features/home/presentation/views/widgets/Listing_card_properties_row.dart';
+import 'package:home_space/features/home/presentation/views/widgets/listing_card_properties_row.dart';
 
 import '../../../../../shared/constants.dart';
 

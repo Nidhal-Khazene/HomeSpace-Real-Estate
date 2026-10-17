@@ -6,7 +6,7 @@ import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/features/home/presentation/views/widgets/listing_card_details_carousel_view.dart';
 import 'package:home_space/shared/functions/get_dummy_listing_card_details_images.dart';
 
-import 'Listing_card_properties_row.dart';
+import 'listing_card_properties_row.dart';
 import 'listing_card_details_app_bar.dart';
 import 'listing_card_details_custom_bottom_bar.dart';
 import 'listing_card_details_personal_list_tile.dart';

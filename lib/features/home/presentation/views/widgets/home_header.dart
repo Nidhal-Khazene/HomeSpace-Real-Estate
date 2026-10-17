@@ -17,9 +17,9 @@ class HomeHeader extends StatelessWidget {
         const CircleAvatar(
           backgroundImage: AssetImage(Assets.assetsImagesPersonalAccount),
         ),
-        const SizedBox(width: 50),
+        const SizedBox(width: 12),
         const HomeHeaderLocationBar(),
-        const SizedBox(width: 50),
+        const SizedBox(width: 12),
         CustomOvalContainer(
           onTap: () {
             Navigator.pushNamed(context, HomeNotificationView.routeName);

@@ -4,18 +4,30 @@ import 'package:home_space/features/home/domain/entities/sale_listings_entity.da
 import 'package:home_space/features/home/domain/repos/home_repo.dart';
 import 'package:home_space/shared/use_cases/use_case.dart';
 
-class GetSaleListingsUseCase extends UseCase<List<SaleListingsEntity>, int> {
+class GetSaleListingsParams {
+  final int pageNumber;
+  final String? propertyType;
+
+  const GetSaleListingsParams({
+    this.pageNumber = 0,
+    this.propertyType,
+  });
+}
+
+class GetSaleListingsUseCase
+    extends UseCase<List<SaleListingsEntity>, GetSaleListingsParams> {
   final HomeRepo homeRepo;
 
   GetSaleListingsUseCase({required this.homeRepo});
+
   @override
   Future<Either<Failures, List<SaleListingsEntity>>> call([
-    int? pageNumber = 0,
-    dynamic queryParameters,
+    GetSaleListingsParams? param,
   ]) async {
+    final params = param ?? const GetSaleListingsParams();
     return await homeRepo.getSaleListings(
-      pageNumber: pageNumber ?? 0,
-      queryParameters: queryParameters as Map<String, dynamic>?,
+      pageNumber: params.pageNumber,
+      propertyType: params.propertyType,
     );
   }
 }
