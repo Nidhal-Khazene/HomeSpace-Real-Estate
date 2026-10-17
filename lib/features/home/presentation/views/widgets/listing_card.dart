@@ -65,7 +65,7 @@ class _ListingCardState extends State<ListingCard> {
       child: AspectRatio(
         aspectRatio:
             MediaQuery.sizeOf(context).height *
-            0.50 /
+            0.56 /
             MediaQuery.sizeOf(context).width,
         child: Container(
           width: MediaQuery.sizeOf(context).width,

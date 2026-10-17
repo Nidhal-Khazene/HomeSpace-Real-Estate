@@ -22,7 +22,10 @@ class SaleListingsListView extends StatelessWidget {
       itemBuilder: (context, index) {
         final listing = listings[index];
         final image = listingImages[index % listingImages.length];
-        return ListingCard(image: image, saleListingsEntity: listing);
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: ListingCard(image: image, saleListingsEntity: listing),
+        );
       },
     );
   }
