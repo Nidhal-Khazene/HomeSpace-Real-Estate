@@ -31,7 +31,7 @@ class TurnOnNotification extends StatelessWidget {
               Text(
                 "Don’t miss important update and account activity",
                 style: AppStyles.regular12.copyWith(
-                  color: const Color(0xFF8C8B8B),
+                  color: ColorsData.kFontSecondaryColor,
                 ),
               ),
               const SizedBox(height: 112),
@@ -55,7 +55,7 @@ class TurnOnNotification extends StatelessWidget {
                 borderColor: ColorsData.kPrimaryColor,
                 textContentColor: ColorsData.kPrimaryColor,
                 textContent: "Skip",
-                backgroundColor: Colors.transparent,
+                backgroundColor: ColorsData.kTransparentColor,
               ),
             ],
           ),

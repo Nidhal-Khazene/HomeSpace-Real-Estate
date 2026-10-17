@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 
 class BottomSheetLineHeader extends StatelessWidget {
   const BottomSheetLineHeader({super.key});
@@ -9,7 +10,7 @@ class BottomSheetLineHeader extends StatelessWidget {
       width: 24,
       height: 4,
       decoration: ShapeDecoration(
-        color: const Color(0xFFE8ECFF),
+        color: ColorsData.kLightPrimaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
       ),
     );

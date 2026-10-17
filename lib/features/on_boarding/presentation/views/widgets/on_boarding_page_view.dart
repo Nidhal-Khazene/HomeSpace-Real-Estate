@@ -69,7 +69,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
                 },
                 textContent: "Skip",
                 textContentColor: ColorsData.kPrimaryColor,
-                backgroundColor: Colors.transparent,
+                backgroundColor: ColorsData.kTransparentColor,
                 borderColor: ColorsData.kPrimaryColor,
               ),
             ],

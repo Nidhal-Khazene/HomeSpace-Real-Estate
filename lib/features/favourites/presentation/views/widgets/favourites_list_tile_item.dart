@@ -32,7 +32,7 @@ class FavouritesListTileItem extends StatelessWidget {
           height: 40,
           padding: const EdgeInsets.all(10),
           decoration: ShapeDecoration(
-            color: const Color(0xFFE8ECFF) /* Primary-Red-10 */,
+            color: ColorsData.kLightPrimaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
             ),

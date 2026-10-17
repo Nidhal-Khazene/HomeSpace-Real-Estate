@@ -47,7 +47,7 @@ class CustomOvalContainer extends StatelessWidget {
                 textContent ?? "",
                 textAlign: TextAlign.center,
                 style: AppStyles.medium16.copyWith(
-                  color: textContentColor ?? Colors.white,
+                  color: textContentColor ?? ColorsData.kWhiteColor,
                 ),
               ),
         ),

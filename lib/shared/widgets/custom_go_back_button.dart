@@ -21,7 +21,7 @@ class CustomGoBackButton extends StatelessWidget {
       child: Container(
         decoration: ShapeDecoration(
           shape: OvalBorder(
-            side: BorderSide(color: borderColor ?? const Color(0xFFE9E8E8)),
+            side: BorderSide(color: borderColor ?? ColorsData.kBorderColor),
           ),
         ),
         height: 40,

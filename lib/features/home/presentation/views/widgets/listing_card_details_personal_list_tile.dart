@@ -30,11 +30,11 @@ class ListingCardDetailsPersonalListTile extends StatelessWidget {
         style: AppStyles.regular16,
       ),
       trailing: CustomOvalContainer(
-        borderColor: Colors.transparent,
+        borderColor: ColorsData.kTransparentColor,
         backgroundColor: ColorsData.kMediumPrimaryColor,
         width: 40,
         height: 40,
-        widget: const Icon(Iconsax.call_copy, color: Colors.white, size: 20),
+        widget: Icon(Iconsax.call_copy, color: ColorsData.kWhiteColor, size: 20),
       ),
     );
   }

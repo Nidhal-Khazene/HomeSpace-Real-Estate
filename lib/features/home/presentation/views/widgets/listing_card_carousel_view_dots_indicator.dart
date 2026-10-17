@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/shared/constants.dart';
 
 class ListingCardCarouselViewDotsIndicator extends StatefulWidget {
@@ -49,12 +50,14 @@ class _ListingCardCarouselViewDotsIndicatorState
             width: 4,
             height: 4,
             decoration: ShapeDecoration(
-              color: currentIndex == index ? Colors.transparent : Colors.white,
-              shape: const OvalBorder(
+              color: currentIndex == index
+                  ? ColorsData.kTransparentColor
+                  : ColorsData.kWhiteColor,
+              shape: OvalBorder(
                 side: BorderSide(
                   width: 1,
                   strokeAlign: BorderSide.strokeAlignOutside,
-                  color: Colors.white,
+                  color: ColorsData.kWhiteColor,
                 ),
               ),
             ),

@@ -55,11 +55,11 @@ class _WhatIsYourBuildingPreferenceViewState
                   child: CustomPropertyTypeContainer(
                     textContent: e,
                     textContentColor: isActive
-                        ? Colors.white
+                        ? ColorsData.kWhiteColor
                         : ColorsData.kFontSecondaryColor,
                     backgroundColor: isActive
                         ? ColorsData.kMediumPrimaryColor
-                        : Colors.transparent,
+                        : ColorsData.kTransparentColor,
                     borderColor: isActive
                         ? ColorsData.kMediumPrimaryColor
                         : ColorsData.kBorderColor,
@@ -77,9 +77,9 @@ class _WhatIsYourBuildingPreferenceViewState
               ),
               suffixIcon: Transform.rotate(
                 angle: -math.pi / 2,
-                child: const Icon(
+                child: Icon(
                   Icons.arrow_back_ios_new,
-                  color: Colors.black,
+                  color: ColorsData.kBlackColor,
                 ),
               ),
               hintText: "Property Status",
@@ -120,7 +120,7 @@ class _WhatIsYourBuildingPreferenceViewState
                   const SizedBox(width: 12),
                   CustomCircleContainer(
                     textContent: "$bedsCounter",
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: ColorsData.kTransparentColor,
                     borderColor: ColorsData.kBorderColor,
                   ),
                   const SizedBox(width: 12),
@@ -165,7 +165,7 @@ class _WhatIsYourBuildingPreferenceViewState
                   const SizedBox(width: 12),
                   CustomCircleContainer(
                     textContent: "$bathsCounter",
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: ColorsData.kTransparentColor,
                     borderColor: ColorsData.kBorderColor,
                   ),
                   const SizedBox(width: 12),

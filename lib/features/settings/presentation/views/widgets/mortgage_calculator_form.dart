@@ -63,7 +63,7 @@ class _MortgageCalculatorFormState extends State<MortgageCalculatorForm> {
                 CustomButton(
                   borderColor: readyToContinue
                       ? ColorsData.kPrimaryColor
-                      : Colors.transparent,
+                      : ColorsData.kTransparentColor,
                   textContent: "Continue",
                   backgroundColor: readyToContinue
                       ? ColorsData.kPrimaryColor

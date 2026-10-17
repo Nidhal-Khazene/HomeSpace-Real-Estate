@@ -25,7 +25,7 @@ class _ToggleContainerSwitchState extends State<ToggleContainerSwitch> {
         width: 40,
         height: 24,
         decoration: ShapeDecoration(
-          color: isActive ? ColorsData.kLightPrimaryColor : Colors.transparent,
+          color: isActive ? ColorsData.kLightPrimaryColor : ColorsData.kTransparentColor,
           shape: RoundedRectangleBorder(
             side: BorderSide(
               width: 1,
@@ -72,9 +72,9 @@ class InActiveCircle extends StatelessWidget {
     return Container(
       width: 20,
       height: 20,
-      decoration: const ShapeDecoration(
-        color: Color(0xFF8C8B8B),
-        shape: OvalBorder(),
+      decoration: ShapeDecoration(
+        color: ColorsData.kFontSecondaryColor,
+        shape: const OvalBorder(),
       ),
     );
   }

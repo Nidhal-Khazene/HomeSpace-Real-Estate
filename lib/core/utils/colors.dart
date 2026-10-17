@@ -8,6 +8,12 @@ abstract class ColorsData {
   static final Color kFontPrimaryColor = const Color(0xFF1F1F1F);
   static final Color kFontSecondaryColor = const Color(0xFF8C8B8B);
   static final Color kBorderColor = const Color(0xFFE9E8E8);
+  static final Color kWhiteColor = const Color(0xFFFFFFFF);
+  static final Color kBlackColor = const Color(0xFF000000);
+  static final Color kTransparentColor = const Color(0x00000000);
+  static final Color kRedColor = const Color(0xFFEE3455);
+  static final Color kShadowColor = const Color(0x19000000);
+  static final Color kWhiteOverlayColor = const Color(0x33FFFFFF);
 }
 
 abstract class PieChartColorsData {

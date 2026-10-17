@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 
 class CustomSocialMediaButton extends StatelessWidget {
@@ -16,9 +17,9 @@ class CustomSocialMediaButton extends StatelessWidget {
       width: double.infinity,
       height: 49,
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xFFE9E8E8)),
+          side: BorderSide(width: 1, color: ColorsData.kBorderColor),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

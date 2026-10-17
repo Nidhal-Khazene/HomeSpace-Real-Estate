@@ -26,9 +26,9 @@ class FavouritesListingCard extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xFFE9E8E8)),
+          side: BorderSide(width: 1, color: ColorsData.kBorderColor),
           borderRadius: BorderRadius.circular(8),
         ),
       ),

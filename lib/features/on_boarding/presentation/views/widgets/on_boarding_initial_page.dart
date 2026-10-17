@@ -4,6 +4,7 @@ import 'package:home_space/core/services/shared_preferences_singleton.dart';
 import 'package:home_space/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 
 import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_button.dart';
 
@@ -42,7 +43,7 @@ class OnBoardingInitialPage extends StatelessWidget {
               'Discover how to navigate our app \'s features and make the most of your real estate journey.',
               textAlign: TextAlign.center,
               style: AppStyles.regular14.copyWith(
-                color: const Color(0xFF8C8B8B),
+                color: ColorsData.kFontSecondaryColor,
               ),
             ),
           ),
@@ -56,7 +57,7 @@ class OnBoardingInitialPage extends StatelessWidget {
               );
             },
             textContent: 'Get Started',
-            backgroundColor: const Color(0xff4360f6),
+            backgroundColor: ColorsData.kMediumPrimaryColor,
           ),
         ],
       ),

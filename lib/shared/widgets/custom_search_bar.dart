@@ -18,7 +18,7 @@ class CustomSearchBar extends StatelessWidget {
     return TextField(
       enabled: state,
       decoration: InputDecoration(
-        prefixIcon: const Icon(IconlyBroken.search, color: Colors.black),
+        prefixIcon: Icon(IconlyBroken.search, color: ColorsData.kBlackColor),
         filled: true,
         fillColor: ColorsData.kNotReadyButtonColor,
         hintText: textContent,
@@ -36,7 +36,7 @@ class CustomSearchBar extends StatelessWidget {
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(100),
-      borderSide: const BorderSide(color: Colors.transparent),
+      borderSide: BorderSide(color: ColorsData.kTransparentColor),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/colors.dart';
 import '../../../../../shared/widgets/custom_search_bar.dart';
 import '../../../../../shared/widgets/search_bottom_sheet_view.dart';
 
@@ -21,7 +22,7 @@ class _SearchBottomSheetState extends State<SearchBottomSheet> {
         });
 
         await showModalBottomSheet(
-          backgroundColor: Colors.white,
+          backgroundColor: ColorsData.kWhiteColor,
           isScrollControlled: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),

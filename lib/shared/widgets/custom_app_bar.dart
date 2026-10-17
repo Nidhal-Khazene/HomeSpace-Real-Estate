@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/shared/constants.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/shared/widgets/custom_go_back_button.dart';
@@ -34,8 +35,8 @@ class CustomAppBar extends StatelessWidget {
             Visibility(
               visible: profileImageWidget != null,
               child: CustomCircleContainer(
-                backgroundColor: Colors.transparent,
-                borderColor: Colors.transparent,
+                backgroundColor: ColorsData.kTransparentColor,
+                borderColor: ColorsData.kTransparentColor,
                 widget: profileImageWidget,
               ),
             ),

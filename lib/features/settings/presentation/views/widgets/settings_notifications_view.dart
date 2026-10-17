@@ -53,7 +53,7 @@ class SettingsNotificationsView extends StatelessWidget {
                     child: CustomButton(
                       textContent: "Push",
                       textStyle: AppStyles.regular12.copyWith(
-                        color: Colors.white,
+                        color: ColorsData.kWhiteColor,
                       ),
                     ),
                   ),
@@ -64,7 +64,7 @@ class SettingsNotificationsView extends StatelessWidget {
                       textStyle: AppStyles.regular12.copyWith(
                         color: ColorsData.kMediumPrimaryColor,
                       ),
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: ColorsData.kTransparentColor,
                       borderColor: ColorsData.kMediumPrimaryColor,
                     ),
                   ),

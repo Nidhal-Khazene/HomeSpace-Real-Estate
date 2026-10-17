@@ -14,25 +14,25 @@ class ContactSupportView extends StatelessWidget {
   static final List<ListTileModel> list = [
     ListTileModel(
       title: "Call Us",
-      trailingWidget: const Icon(
+      trailingWidget: Icon(
         Iconsax.call_copy,
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         size: 20,
       ),
     ),
     ListTileModel(
       title: "Email Us",
-      trailingWidget: const Icon(
+      trailingWidget: Icon(
         Iconsax.message_minus_copy,
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         size: 20,
       ),
     ),
     ListTileModel(
       title: "Live Chat",
-      trailingWidget: const Icon(
+      trailingWidget: Icon(
         Iconsax.message_notif_copy,
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         size: 20,
       ),
     ),

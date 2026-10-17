@@ -71,7 +71,7 @@ class _ListingCardState extends State<ListingCard> {
           width: MediaQuery.sizeOf(context).width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 1, color: Color(0xFFE9E8E8)),
+              side: BorderSide(width: 1, color: ColorsData.kBorderColor),
               borderRadius: BorderRadius.circular(8),
             ),
           ),

@@ -13,7 +13,7 @@ class ListingEnquiryMessage extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: const Color(0xFFF2F4FC) /* Bg2 */,
+        color: ColorsData.kNotReadyButtonColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       child: Column(

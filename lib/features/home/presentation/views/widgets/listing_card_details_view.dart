@@ -54,26 +54,20 @@ class ListingCardDetailsView extends StatelessWidget {
                   saleListingsEntity: saleListingsEntity,
                 ),
                 const SizedBox(height: 24),
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     children: [
                       TextSpan(
                         text:
                             'That\'s it! You\'re now ready to dive into the world of real estate with our app. Enjoy exploring properties, finding your dream home, and making informed decisions.',
-                        style: TextStyle(
-                          color: Color(0xFF8C8B8B),
-                          fontSize: 12,
-                          fontFamily: 'GT Walsheim Pro',
-                          fontWeight: FontWeight.w400,
+                        style: AppStyles.regular12.copyWith(
+                          color: ColorsData.kFontSecondaryColor,
                         ),
                       ),
                       TextSpan(
                         text: 'Read More',
-                        style: TextStyle(
-                          color: Color(0xFF4360F6) /* Primary-Red-100 */,
-                          fontSize: 12,
-                          fontFamily: 'GT Walsheim Pro',
-                          fontWeight: FontWeight.w400,
+                        style: AppStyles.regular12.copyWith(
+                          color: ColorsData.kMediumPrimaryColor,
                         ),
                       ),
                     ],

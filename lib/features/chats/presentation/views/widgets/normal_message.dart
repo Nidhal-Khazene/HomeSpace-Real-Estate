@@ -26,7 +26,7 @@ class NormalMessage extends StatelessWidget {
               width: 224,
               child: Text(
                 "I will send you more listings for you to check out..how about that ?",
-                style: AppStyles.regular12.copyWith(color: Colors.white),
+                style: AppStyles.regular12.copyWith(color: ColorsData.kWhiteColor),
               ),
             ),
           ],

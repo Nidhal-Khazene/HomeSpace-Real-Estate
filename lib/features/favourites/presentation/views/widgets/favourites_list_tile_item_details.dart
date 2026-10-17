@@ -3,6 +3,7 @@ import 'package:home_space/shared/constants.dart';
 import 'package:home_space/shared/functions/show_success_snack_bar.dart';
 import 'package:home_space/shared/models/listing_card_model.dart';
 import 'package:home_space/core/utils/assets.dart';
+import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 import 'package:home_space/shared/widgets/custom_app_bar.dart';
 import 'package:home_space/features/favourites/presentation/views/widgets/favourites_listing_card.dart';
@@ -75,16 +76,16 @@ class _FavouritesListTileItemDetailsState
                     (index) => Dismissible(
                       background: Container(
                         decoration: ShapeDecoration(
-                          color: const Color(0xFFEE3455),
+                          color: ColorsData.kRedColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Icon(Iconsax.trash_copy, color: Colors.white),
-                            SizedBox(width: 12),
+                            Icon(Iconsax.trash_copy, color: ColorsData.kWhiteColor),
+                            const SizedBox(width: 12),
                           ],
                         ),
                       ),

@@ -69,7 +69,7 @@ class _FinishSignUpViewBodyState extends State<FinishSignUpViewBody> {
                   TextSpan(
                     text: "terms and condition",
                     style: AppStyles.regular14.copyWith(
-                      color: const Color(0xFF4360F6),
+                      color: ColorsData.kMediumPrimaryColor,
                     ),
                   ),
                   const TextSpan(text: "."),
@@ -80,7 +80,7 @@ class _FinishSignUpViewBodyState extends State<FinishSignUpViewBody> {
             CustomButton(
               borderColor: readyToContinue
                   ? ColorsData.kPrimaryColor
-                  : Colors.transparent,
+                  : ColorsData.kTransparentColor,
               textContent: "Agree and Continue",
               backgroundColor: readyToContinue
                   ? ColorsData.kPrimaryColor

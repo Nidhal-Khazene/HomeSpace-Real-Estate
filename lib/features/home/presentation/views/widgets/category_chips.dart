@@ -67,10 +67,10 @@ class _CategoryChipsState extends State<CategoryChips> {
                 widget.onTap(index);
               }
             },
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorsData.kTransparentColor,
             selectedColor: ColorsData.kMediumPrimaryColor,
             labelStyle: AppStyles.regular12.copyWith(
-              color: isSelected ? Colors.white : ColorsData.kFontSecondaryColor,
+              color: isSelected ? ColorsData.kWhiteColor : ColorsData.kFontSecondaryColor,
             ),
             shape: RoundedRectangleBorder(
               side: BorderSide(

@@ -38,7 +38,7 @@ class ActiveAddingMedia extends StatelessWidget {
               size: 20,
             ),
             borderColor: ColorsData.kMediumPrimaryColor,
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorsData.kTransparentColor,
           ),
           const SizedBox(height: 8),
           CustomOvalContainer(
@@ -50,13 +50,13 @@ class ActiveAddingMedia extends StatelessWidget {
               size: 20,
             ),
             borderColor: ColorsData.kMediumPrimaryColor,
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorsData.kTransparentColor,
           ),
           const SizedBox(height: 8),
           CustomOvalContainer(
             height: 40,
             width: 40,
-            widget: const Icon(Iconsax.add_copy, color: Colors.white, size: 20),
+            widget: Icon(Iconsax.add_copy, color: ColorsData.kWhiteColor, size: 20),
             borderColor: ColorsData.kMediumPrimaryColor,
             backgroundColor: ColorsData.kMediumPrimaryColor,
           ),
@@ -76,7 +76,7 @@ class NoActiveAddingMedia extends StatelessWidget {
       width: 40,
       widget: Icon(Icons.add, color: ColorsData.kMediumPrimaryColor, size: 20),
       borderColor: ColorsData.kBorderColor,
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorsData.kTransparentColor,
     );
   }
 }

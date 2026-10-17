@@ -17,13 +17,13 @@ class ListingCardDetailsCustomBottomBar extends StatelessWidget {
     return Container(
       width: MediaQuery.sizeOf(context).width,
       height: 80,
-      decoration: const BoxDecoration(
-        color: Colors.white,
+      decoration: BoxDecoration(
+        color: ColorsData.kWhiteColor,
         boxShadow: [
           BoxShadow(
-            color: Color(0x19000000),
+            color: ColorsData.kShadowColor,
             blurRadius: 12,
-            offset: Offset(5, 0),
+            offset: const Offset(5, 0),
             spreadRadius: 0,
           ),
         ],
@@ -42,13 +42,13 @@ class ListingCardDetailsCustomBottomBar extends StatelessWidget {
                 height: 38,
                 width: 117,
                 textContent: "Send enquiry",
-                textStyle: AppStyles.regular12.copyWith(color: Colors.white),
+                textStyle: AppStyles.regular12.copyWith(color: ColorsData.kWhiteColor),
                 backgroundColor: ColorsData.kMediumPrimaryColor,
               ),
               GestureDetector(
                 onTap: () async {
                   await showModalBottomSheet(
-                    backgroundColor: Colors.white,
+                    backgroundColor: ColorsData.kWhiteColor,
                     isScrollControlled: true,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32),
@@ -58,7 +58,7 @@ class ListingCardDetailsCustomBottomBar extends StatelessWidget {
                   );
                 },
                 child: CustomCircleContainer(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: ColorsData.kTransparentColor,
                   borderColor: ColorsData.kBorderColor,
                   widget: const CustomThreeDots(),
                 ),

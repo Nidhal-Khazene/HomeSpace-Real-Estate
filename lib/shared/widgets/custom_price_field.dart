@@ -25,7 +25,7 @@ class CustomPriceField extends StatelessWidget {
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
-      borderSide: const BorderSide(color: Color(0xFFE9E8E8), width: 1),
+      borderSide: BorderSide(color: ColorsData.kBorderColor, width: 1),
     );
   }
 }

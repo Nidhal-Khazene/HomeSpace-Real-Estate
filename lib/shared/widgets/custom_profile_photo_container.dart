@@ -31,10 +31,10 @@ class CustomProfilePhotoContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
-              child: const Icon(
+              child: Icon(
                 Iconsax.camera_copy,
                 size: 12,
-                color: Colors.white,
+                color: ColorsData.kWhiteColor,
               ),
             ),
           ),

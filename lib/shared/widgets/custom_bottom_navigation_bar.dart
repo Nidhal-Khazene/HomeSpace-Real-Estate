@@ -37,11 +37,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: ColorsData.kWhiteColor,
 
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
+              color: ColorsData.kShadowColor,
               spreadRadius: 2,
               blurRadius: 25,
               offset: const Offset(0, -2),
@@ -54,9 +54,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             topRight: Radius.circular(32),
           ),
           child: NavigationBar(
-            indicatorColor: Colors.transparent,
+            indicatorColor: ColorsData.kTransparentColor,
             height: 72,
-            backgroundColor: Colors.white,
+            backgroundColor: ColorsData.kWhiteColor,
             selectedIndex: _selectedIndex,
             onDestinationSelected: (index) {
               setState(() {

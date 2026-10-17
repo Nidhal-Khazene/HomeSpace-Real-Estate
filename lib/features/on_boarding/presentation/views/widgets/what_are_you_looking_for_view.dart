@@ -50,7 +50,7 @@ class _WhatAreYouLookingForViewState extends State<WhatAreYouLookingForView> {
                 textContentColor: !isActive
                     ? ColorsData.kMediumPrimaryColor
                     : null,
-                backgroundColor: !isActive ? Colors.transparent : null,
+                backgroundColor: !isActive ? ColorsData.kTransparentColor : null,
               );
             }).toList(),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/colors.dart';
 import '../../../../../shared/constants.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../shared/widgets/custom_go_back_button.dart';
@@ -43,7 +44,7 @@ class _ListingCardDetailsImageHeaderState
     return Row(
       children: [
         CustomGoBackButton(
-          widget: const Icon(Icons.close, color: Colors.white, size: 20),
+          widget: Icon(Icons.close, color: ColorsData.kWhiteColor, size: 20),
           onTap: () {
             Navigator.pop(context);
           },
@@ -56,7 +57,7 @@ class _ListingCardDetailsImageHeaderState
         ),
         Text(
           "${currentIndex + 1}/${widget.listLength}",
-          style: AppStyles.medium16.copyWith(color: Colors.white),
+          style: AppStyles.medium16.copyWith(color: ColorsData.kWhiteColor),
         ),
       ],
     );

@@ -17,7 +17,7 @@ class CustomScrollContainer extends StatelessWidget {
           height: 4,
           decoration: ShapeDecoration(
             color: !isActive
-                ? const Color(0xFFE8ECFF)
+                ? ColorsData.kLightPrimaryColor
                 : ColorsData.kMediumPrimaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),

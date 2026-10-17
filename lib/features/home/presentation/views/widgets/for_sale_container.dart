@@ -10,7 +10,7 @@ class ForSaleContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: ColorsData.kWhiteColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
       ),
       padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),

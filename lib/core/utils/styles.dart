@@ -55,4 +55,8 @@ abstract class AppStyles {
     fontSize: 14,
     fontWeight: FontWeight.w700,
   );
+
+  static final TextStyle transparent = const TextStyle(
+    color: Color(0x00000000),
+  );
 }

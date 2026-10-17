@@ -49,10 +49,10 @@ class _SelectTimeChoiceChipListViewState
                 _selectedIndex = index;
               });
             },
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorsData.kTransparentColor,
             selectedColor: ColorsData.kMediumPrimaryColor,
             labelStyle: AppStyles.regular12.copyWith(
-              color: isSelected ? Colors.white : ColorsData.kMediumPrimaryColor,
+              color: isSelected ? ColorsData.kWhiteColor : ColorsData.kMediumPrimaryColor,
             ),
             shape: RoundedRectangleBorder(
               side: BorderSide(color: ColorsData.kMediumPrimaryColor),

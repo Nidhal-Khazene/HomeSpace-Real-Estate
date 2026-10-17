@@ -73,11 +73,11 @@ class _CustomCalendarState extends State<CustomCalendar> {
                   return const SizedBox.shrink(); // hide selected day
                 },
               ),
-              calendarStyle: const CalendarStyle(
+              calendarStyle: CalendarStyle(
                 outsideDaysVisible: false,
-                defaultTextStyle: TextStyle(color: Colors.transparent),
-                todayTextStyle: TextStyle(color: Colors.transparent),
-                selectedTextStyle: TextStyle(color: Colors.transparent),
+                defaultTextStyle: AppStyles.transparent,
+                todayTextStyle: AppStyles.transparent,
+                selectedTextStyle: AppStyles.transparent,
               ),
             ),
             const Divider(),
@@ -120,9 +120,8 @@ class _CustomCalendarState extends State<CustomCalendar> {
             alignment: Alignment.center,
             child: Text(
               '${day.day}',
-              style: AppStyles.regular16.copyWith(
+              style: AppStyles.bold16.copyWith(
                 color: ColorsData.kMediumPrimaryColor,
-                fontWeight: FontWeight.bold,
               ),
             ),
           );
@@ -156,7 +155,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
           alignment: Alignment.center,
           child: Text(
             '${day.day}',
-            style: AppStyles.medium16.copyWith(color: Colors.white),
+            style: AppStyles.medium16.copyWith(color: ColorsData.kWhiteColor),
           ),
         );
       },
@@ -166,14 +165,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
   CalendarStyle buildCalendarStyle() {
     return CalendarStyle(
       outsideDaysVisible: false,
-      selectedTextStyle: AppStyles.medium16.copyWith(color: Colors.white),
+      selectedTextStyle: AppStyles.medium16.copyWith(color: ColorsData.kWhiteColor),
       disabledTextStyle: AppStyles.regular16.copyWith(
         color: ColorsData.kFontSecondaryColor,
       ),
       defaultTextStyle: AppStyles.regular16.copyWith(
         color: ColorsData.kFontSecondaryColor,
       ),
-      todayTextStyle: AppStyles.medium16.copyWith(color: Colors.white),
+      todayTextStyle: AppStyles.medium16.copyWith(color: ColorsData.kWhiteColor),
     );
   }
 }

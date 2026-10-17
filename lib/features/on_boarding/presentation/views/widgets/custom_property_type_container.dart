@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 import 'package:home_space/core/utils/styles.dart';
 
 class CustomPropertyTypeContainer extends StatelessWidget {
@@ -22,7 +23,7 @@ class CustomPropertyTypeContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100),
-          side: BorderSide(color: borderColor ?? const Color(0xFFE9E8E8)),
+          side: BorderSide(color: borderColor ?? ColorsData.kBorderColor),
         ),
         color: backgroundColor,
       ),

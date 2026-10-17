@@ -43,10 +43,10 @@ class _ListingCardDetailsAppBarState extends State<ListingCardDetailsAppBar> {
           },
           height: 40,
           width: 40,
-          backgroundColor: Colors.transparent,
+          backgroundColor: ColorsData.kTransparentColor,
           borderColor: ColorsData.kBorderColor,
           widget: isLoved
-              ? const Icon(Iconsax.heart, color: Colors.red)
+              ? Icon(Iconsax.heart, color: ColorsData.kRedColor)
               : SvgPicture.asset(
                   Assets.assetsImagesIconsHeartBlackOutlinedIcon,
                 ),

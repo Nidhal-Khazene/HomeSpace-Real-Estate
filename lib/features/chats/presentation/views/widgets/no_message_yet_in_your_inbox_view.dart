@@ -19,8 +19,8 @@ class NoMessageYetInYourInboxView extends StatelessWidget {
             CustomOvalContainer(
               width: 104,
               height: 104,
-              backgroundColor: const Color(0xFFE8ECFF),
-              borderColor: Colors.transparent,
+              backgroundColor: ColorsData.kLightPrimaryColor,
+              borderColor: ColorsData.kTransparentColor,
               widget: Icon(
                 Iconsax.message_search_copy,
                 color: ColorsData.kPrimaryColor,

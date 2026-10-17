@@ -46,8 +46,8 @@ class ChatsViewBody extends StatelessWidget {
                   isThreeLine: true,
                   shape: buildListTileRoundedRectangleBorder(),
                   leading: CustomCircleContainer(
-                    backgroundColor: Colors.transparent,
-                    borderColor: Colors.transparent,
+                    backgroundColor: ColorsData.kTransparentColor,
+                    borderColor: ColorsData.kTransparentColor,
                     widget: imagesList[index],
                   ),
                   title: Text("Robert daniel", style: AppStyles.regular12),

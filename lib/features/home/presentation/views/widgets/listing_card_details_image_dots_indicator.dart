@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_space/core/utils/colors.dart';
 
 class ListingCardDetailsImageDotsIndicator extends StatefulWidget {
   const ListingCardDetailsImageDotsIndicator({
@@ -56,7 +57,7 @@ class _ListingCardDetailsImageDotsIndicatorState
               width: totalWidth,
               height: 4,
               decoration: ShapeDecoration(
-                color: const Color(0xFFE8ECFF) /* Primary-Red-10 */,
+                color: ColorsData.kLightPrimaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(100),
                 ),
@@ -70,7 +71,7 @@ class _ListingCardDetailsImageDotsIndicatorState
               width: dynamicWidth,
               height: 4,
               decoration: ShapeDecoration(
-                color: const Color(0xFF4360F6) /* Primary-Red-100 */,
+                color: ColorsData.kMediumPrimaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(100),
                 ),

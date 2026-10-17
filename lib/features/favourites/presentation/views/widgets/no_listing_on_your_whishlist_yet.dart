@@ -22,7 +22,7 @@ class NoListingOnYourWishlistYet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomOvalContainer(
-                  borderColor: Colors.transparent,
+                  borderColor: ColorsData.kTransparentColor,
                   backgroundColor: ColorsData.kLightPrimaryColor,
                   width: 104,
                   height: 104,
@@ -48,11 +48,11 @@ class NoListingOnYourWishlistYet extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  borderColor: Colors.transparent,
+                  borderColor: ColorsData.kTransparentColor,
                   backgroundColor: ColorsData.kMediumPrimaryColor,
                   width: 163,
                   textContent: "Explore listing",
-                  textStyle: AppStyles.regular12.copyWith(color: Colors.white),
+                  textStyle: AppStyles.regular12.copyWith(color: ColorsData.kWhiteColor),
                 ),
               ],
             ),
